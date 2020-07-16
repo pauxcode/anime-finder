@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 // import Search from './Search'
-import Anime from "./Anime";
+import Anime from "../pages/Anime/Anime";
 
 function Prueba() {
   //Lo que quiero hacer es que cada que el usuario digite algo en el input  pase un 1 segundo y le arroje resultados de la busqueda

@@ -2,14 +2,15 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 //Components
-import Wrapper from "./Wrapper";
-import AnimeSelected from "./Anime-Selected";
+import Wrapper from "../../components/Wrapper";
+import AnimeSelected from "../Details/Anime-Selected";
 
 const AnimePageStyled = styled.div`
   background: var(--background);
 `;
 
 function AnimePage({ match, history }) {
+  console.log(match);
   const [anime, setAnime] = useState([]);
   useEffect(() => {
     const abortController = new AbortController();
@@ -23,7 +24,7 @@ function AnimePage({ match, history }) {
     return function cleanup() {
       abortController.abort();
     };
-  }, [anime, match.params.id]);
+  }, []);
   function handleClick() {
     history.goBack();
   }

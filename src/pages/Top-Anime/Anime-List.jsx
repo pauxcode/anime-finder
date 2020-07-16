@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 //Components
-import Anime from "./Anime";
-import Wrapper from "./Wrapper";
+import Anime from "../Anime/Anime";
+import Wrapper from "../../components/Wrapper";
 
 const AnimeListStyled = styled.div`
   display: grid;
@@ -16,7 +16,7 @@ const AnimeListStyled = styled.div`
   padding: 3em 0;
 `;
 
-export default function AnimeList() {
+export default function TopAnimeList() {
   const [animeList, setAnimeList] = useState([]);
   useEffect(() => {
     const abortController = new AbortController();
