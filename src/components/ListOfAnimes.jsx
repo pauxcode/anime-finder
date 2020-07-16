@@ -9,6 +9,7 @@ function ListOfAnimes({ animes }) {
         return (
           <Anime
             key={mal_id}
+            id={mal_id}
             image_url={image_url}
             title={title}
             type={type}

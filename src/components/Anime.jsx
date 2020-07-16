@@ -1,12 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-function Anime({ image_url, title, type, score }) {
+function Anime({ id, image_url, title, type, score }) {
   return (
     <div>
-      <img alt={title} src={image_url} />
-      <h2>{title}</h2>
-      <span>{type}</span>
-      <span>{score}</span>
+      <Link to={`/anime/${id}`}>
+        <img alt={title} src={image_url} />
+        <h2>{title}</h2>
+        <span>{type}</span>
+        <span>{score}</span>
+      </Link>
     </div>
   );
 }

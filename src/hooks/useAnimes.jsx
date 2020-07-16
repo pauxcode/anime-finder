@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import getAnimes from "../services/getAnimes";
+import AnimesContext from "../context/AnimesContext";
 
 function useAnimes({ keyword } = {}) {
   //If no recibimos keyword usara 'bleach'
   const [loading, setLoading] = useState(false);
-  const [animes, setAnimes] = useState([]);
+  //Ahora actualizamos el estado global
+  const { animes, setAnimes } = useContext(AnimesContext);
 
   useEffect(() => {
     setLoading(true);
@@ -20,7 +22,7 @@ function useAnimes({ keyword } = {}) {
       // guardamos la keyword del localStorage
       localStorage.setItem("lastKeyword", keyword);
     });
-  }, [keyword]);
+  }, [keyword, setAnimes]);
 
   return { loading, animes };
 }
