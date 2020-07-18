@@ -1,11 +1,14 @@
 import { API_URL } from "./settings";
+const api_URL = `${API_URL}/top/anime`;
 
 function getTopAnimes() {
-  return fetch(API_URL)
+  return fetch(api_URL)
     .then((response) => response.json())
     .then((data) => {
       const { top } = data;
-      const animes = top.map((anime) => anime.mal_id);
+      const animes = top.map(({ title, rank, image_url, mal_id, score }) => {
+        return { title, rank, image_url, mal_id, score };
+      });
       return animes;
     });
 }

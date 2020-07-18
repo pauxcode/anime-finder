@@ -1,39 +1,34 @@
-import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import React from "react";
 
-import useAnimes from "hooks/useAnimes";
+// import useAnimes from "hooks/useAnimes";
+import Header from "components/Header";
+import CardCategory from "components/Card-Category";
 
-import ListOfAnimes from "components/ListOfAnimes";
+// import ListOfAnimes from "components/ListOfAnimes";
 
 function Home() {
-  const [keyword, setKeyword] = useState("");
-
-  const history = useHistory();
-
   // const { loading, animes } = useAnimes();
-  const { animes } = useAnimes();
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    history.push(`/search/${keyword}`);
-  };
-
-  const handleChange = (e) => {
-    setKeyword(e.target.value);
-  };
+  // const { animes } = useAnimes();
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <input
-          placeholder="Search a anime here..."
-          onChange={handleChange}
-          type="text"
-          value={keyword}
+      <Header />
+      <section>
+        <CardCategory
+          title="Top Anime"
+          description="Animes best value for the community"
+          link="/top/anime"
         />
-      </form>
+        <CardCategory
+          title="Season Anime"
+          description="Animes this season"
+          link="/algo"
+        />
+        <CardCategory title="Yolo Anime" description="lorem ipsum algo" />
+        <CardCategory title="Yolo Anime" description="Lorem Impusn algo" />
+      </section>
       {/* <Seasons /> */}
-      <ListOfAnimes animes={animes} />
+      {/* <ListOfAnimes animes={animes} /> */}
     </div>
   );
 }

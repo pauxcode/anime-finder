@@ -32,7 +32,6 @@ function useAnimes({ keyword } = {}) {
   //   if (page === INITIAL_PAGE) return
   //   getAnimes
   // }, [input])
-
   return { loading, animes };
 }
 

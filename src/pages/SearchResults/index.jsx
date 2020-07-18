@@ -1,6 +1,7 @@
 import React from "react";
 import ListOfAnimes from "components/ListOfAnimes";
 import useAnimes from "hooks/useAnimes";
+import Header from "components/Header";
 
 function SearchResults({ match }) {
   const { params } = match;
@@ -13,6 +14,7 @@ function SearchResults({ match }) {
 
   return (
     <div>
+      <Header />
       <ListOfAnimes animes={animes} />
     </div>
   );
