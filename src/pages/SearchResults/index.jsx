@@ -1,6 +1,6 @@
 import React from "react";
-import ListOfAnimes from "../../components/ListOfAnimes";
-import useAnimes from "../../hooks/useAnimes";
+import ListOfAnimes from "components/ListOfAnimes";
+import useAnimes from "hooks/useAnimes";
 
 function SearchResults({ match }) {
   const { params } = match;

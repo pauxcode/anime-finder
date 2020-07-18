@@ -1,19 +1,21 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import useAnimes from "../../hooks/useAnimes";
-import ListOfAnimes from "../../components/ListOfAnimes";
+
+import useAnimes from "hooks/useAnimes";
+
+import ListOfAnimes from "components/ListOfAnimes";
 
 function Home() {
   const [keyword, setKeyword] = useState("");
 
   const history = useHistory();
 
-  const { loading, animes } = useAnimes();
+  // const { loading, animes } = useAnimes();
+  const { animes } = useAnimes();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     history.push(`/search/${keyword}`);
-    console.log(keyword);
   };
 
   const handleChange = (e) => {
@@ -30,6 +32,7 @@ function Home() {
           value={keyword}
         />
       </form>
+      {/* <Seasons /> */}
       <ListOfAnimes animes={animes} />
     </div>
   );

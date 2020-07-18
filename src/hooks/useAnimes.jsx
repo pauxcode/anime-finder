@@ -1,10 +1,13 @@
 import { useContext, useEffect, useState } from "react";
-import getAnimes from "../services/getAnimes";
-import AnimesContext from "../context/AnimesContext";
+import getAnimes from "services/getAnimes";
+import AnimesContext from "context/AnimesContext";
+
+// const INITIAL_PAGE = 0;
 
 function useAnimes({ keyword } = {}) {
   //If no recibimos keyword usara 'bleach'
   const [loading, setLoading] = useState(false);
+  // const [page, setPage] = useState(INITIAL_PAGE); para la paginacio
   //Ahora actualizamos el estado global
   const { animes, setAnimes } = useContext(AnimesContext);
 
@@ -23,6 +26,12 @@ function useAnimes({ keyword } = {}) {
       localStorage.setItem("lastKeyword", keyword);
     });
   }, [keyword, setAnimes]);
+
+  /* Para paginacion... */
+  // useEffect(() => {
+  //   if (page === INITIAL_PAGE) return
+  //   getAnimes
+  // }, [input])
 
   return { loading, animes };
 }

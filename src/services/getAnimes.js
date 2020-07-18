@@ -1,6 +1,11 @@
-function getTopAnimes({ keyword = "bleach" } = {}) {
-  //establecemos el valor por defector con = {}
-  const apiURL = `https://api.jikan.moe/v3/search/anime?q=${keyword}`;
+import { API_URL } from "./settings";
+
+function getAnimes({ limit = 25, keyword = "bleach", page = 1 } = {}) {
+  //establecemos el valor por defector con = {keyword: null}
+  const apiURL = `${API_URL}/search/anime?q=${keyword}&limit=${limit}&page=${page}`;
+  console.log(
+    `${API_URL}/search/anime?q=${keyword}&limit=${limit}&page=${page}`
+  );
 
   return fetch(apiURL)
     .then((response) => response.json())
@@ -14,4 +19,4 @@ function getTopAnimes({ keyword = "bleach" } = {}) {
     });
 }
 
-export default getTopAnimes;
+export default getAnimes;

@@ -1,7 +1,7 @@
-const apiURL = "https://api.jikan.moe/v3/top/anime";
+import { API_URL } from "./settings";
 
 function getTopAnimes() {
-  return fetch(apiURL)
+  return fetch(API_URL)
     .then((response) => response.json())
     .then((data) => {
       const { top } = data;
