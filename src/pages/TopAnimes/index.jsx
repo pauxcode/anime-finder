@@ -7,6 +7,9 @@ import ListOfAnimes from "components/ListOfAnimes";
 
 function TopAnimes() {
   const { loading, topAnimes } = useTopAnimes();
+  if (loading) {
+    return <h3>Loading...</h3>;
+  }
   return (
     <div>
       <Header />

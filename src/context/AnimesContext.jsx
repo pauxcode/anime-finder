@@ -5,9 +5,19 @@ const Context = React.createContext({});
 export function AnimesContextProvider({ children }) {
   const [animes, setAnimes] = useState([]);
   const [topAnimes, setTopAnimes] = useState([]);
+  const [checkedCategory, setCheckedCategory] = useState("");
 
   return (
-    <Context.Provider value={{ animes, setAnimes, topAnimes, setTopAnimes }}>
+    <Context.Provider
+      value={{
+        animes,
+        setAnimes,
+        topAnimes,
+        setTopAnimes,
+        checkedCategory,
+        setCheckedCategory,
+      }}
+    >
       {children}
     </Context.Provider>
   );

@@ -9,7 +9,7 @@ function useAnimes({ keyword } = {}) {
   const [loading, setLoading] = useState(false);
   // const [page, setPage] = useState(INITIAL_PAGE); para la paginacio
   //Ahora actualizamos el estado global
-  const { animes, setAnimes } = useContext(AnimesContext);
+  const { animes, setAnimes, setCheckedCategory } = useContext(AnimesContext);
 
   useEffect(() => {
     setLoading(true);
@@ -21,11 +21,12 @@ function useAnimes({ keyword } = {}) {
 
     getAnimes({ keyword: keywordToUse }).then((animes) => {
       setAnimes(animes);
+      setCheckedCategory("search");
       setLoading(false);
       // guardamos la keyword del localStorage
       localStorage.setItem("lastKeyword", keyword);
     });
-  }, [keyword, setAnimes]);
+  }, [keyword, setAnimes, setCheckedCategory]);
 
   /* Para paginacion... */
   // useEffect(() => {

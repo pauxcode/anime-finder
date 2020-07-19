@@ -1,12 +1,14 @@
 import React, { useContext } from "react";
 import AnimesContext from "context/AnimesContext";
-import Anime from "components/Anime";
+import AnimeDetails from "components/AnimeDetails";
 
-function Detail({ match, history }) {
-  const { animes, topAnimes } = useContext(AnimesContext);
+function PageDetail({ match, history }) {
+  const { animes, topAnimes, checkedCategory } = useContext(AnimesContext);
+  console.log(checkedCategory);
 
-  if (topAnimes.length >= 1) {
-    const anime = topAnimes.find(
+  //TOP ANIME
+  if (checkedCategory === "top-anime") {
+    const topAnime = topAnimes.find(
       // eslint-disable-next-line
       (singleAnime) => singleAnime.mal_id == match.params.id
     );
@@ -18,10 +20,12 @@ function Detail({ match, history }) {
         <button className="back" onClick={handleClick}>
           Back
         </button>
-        <Anime {...anime} />
+        <AnimeDetails {...topAnime} />
       </div>
     );
-  } else if (animes.length >= 1) {
+  }
+  //ANIME SEARCHED
+  else if (checkedCategory === "search") {
     const anime = animes.find(
       // eslint-disable-next-line
       (singleAnime) => singleAnime.mal_id == match.params.id
@@ -35,10 +39,11 @@ function Detail({ match, history }) {
         <button className="back" onClick={handleClick}>
           Back
         </button>
-        <Anime {...anime} />
+        <AnimeDetails {...anime} />
       </div>
     );
   }
+  //404 NOT FOUND
   function handleClick() {
     history.goBack();
   }
@@ -47,9 +52,9 @@ function Detail({ match, history }) {
       <button className="back" onClick={handleClick}>
         Back
       </button>
-      <p>404 Anime don't find</p>;
+      <p>404 Anime don't find</p>
     </div>
   );
 }
 
-export default Detail;
+export default PageDetail;

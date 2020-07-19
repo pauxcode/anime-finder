@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 function Anime({ id, image_url, title, type, score, rank }) {
   const history = useHistory();
