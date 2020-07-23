@@ -1,14 +1,15 @@
 import React from "react";
 import useTopAnimes from "hooks/useTopAnimes";
+import { RotateSpinner } from "components/RotateSpinner";
 
 import Header from "components/Header";
 
-import ListOfAnimes from "components/ListOfAnimes";
+import ListOfAnimes from "components/List-Of-Animes";
 
 function TopAnimes() {
   const { loading, topAnimes } = useTopAnimes();
   if (loading) {
-    return <h3>Loading...</h3>;
+    return <RotateSpinner loading={loading} />;
   }
   return (
     <div>

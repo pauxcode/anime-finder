@@ -1,5 +1,5 @@
 import React from "react";
-import useSeasonsAnime from "hooks/useSeasonsAnime";
+import useSeasonsAnime from "hooks/useSeasonAnimes";
 
 function Seasons() {
   const { seasons } = useSeasonsAnime();

@@ -8,16 +8,25 @@ function useTopAnimes() {
   const { topAnimes, setTopAnimes, setCheckedCategory } = useContext(
     AnimesContext
   );
+  console.log(topAnimes);
 
   useEffect(() => {
     setLoading(true);
-
-    getTopAnimes().then((topAnimes) => {
+    if (topAnimes.length <= 0) {
+      console.log("true");
+      getTopAnimes().then((topAnimes) => {
+        setTopAnimes(topAnimes);
+        setCheckedCategory("top-anime");
+        setLoading(false);
+      });
+    }
+    //Whit this prevent do a fetch request if the context have information
+    else {
       setTopAnimes(topAnimes);
       setCheckedCategory("top-anime");
       setLoading(false);
-    });
-  }, [setTopAnimes, setCheckedCategory]);
+    }
+  }, [topAnimes, setTopAnimes, setCheckedCategory]);
   return { loading, topAnimes };
 }
 

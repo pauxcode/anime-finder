@@ -1,15 +1,16 @@
 import React from "react";
-import ListOfAnimes from "components/ListOfAnimes";
-import useAnimes from "hooks/useAnimes";
+import { RotateSpinner } from "components/RotateSpinner";
+import ListOfAnimes from "components/List-Of-Animes";
+import useSearchedAnimes from "hooks/useSearchedAnimes";
 import Header from "components/Header";
 
 function SearchResults({ match }) {
   const { params } = match;
   const { keyword } = params;
-  const { loading, animes } = useAnimes({ keyword });
+  const { loading, animes } = useSearchedAnimes({ keyword });
 
   if (loading) {
-    return <h3>Loading...</h3>;
+    return <RotateSpinner loading={loading} />;
   }
 
   return (

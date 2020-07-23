@@ -16,16 +16,22 @@ function Home() {
       <section>
         <CardCategory
           title="Top Anime"
-          description="Animes best value for the community"
+          description="Animes best value for the community (Alpha)"
           link="/top/anime"
         />
         <CardCategory
           title="Season Anime"
-          description="Animes this season"
-          link="/algo"
+          description="Animes this season (Beta)"
+          link="/season/anime"
         />
-        <CardCategory title="Yolo Anime" description="lorem ipsum algo" />
-        <CardCategory title="Yolo Anime" description="Lorem Impusn algo" />
+        <CardCategory
+          title="Page in Blanck"
+          description="Nothingt. Not enter"
+        />
+        <CardCategory
+          title="Page in Blanck"
+          description="Nothingt. Not enter"
+        />
       </section>
       {/* <Seasons /> */}
       {/* <ListOfAnimes animes={animes} /> */}
