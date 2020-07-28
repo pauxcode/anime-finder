@@ -17,17 +17,20 @@ function AnimeDetails({
       <iframe
         title={title}
         className="iframe"
-        width="560"
-        height="315"
         src={trailer_url}
         frameBorder="0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
       ></iframe>
       <h2>{title}</h2>
-      <p>
-        Score: {score}. Scored by: {scored_by}
-      </p>
+      <div className="score">
+        <img
+          src="https://img.icons8.com/fluent/48/000000/star.png"
+          className="star"
+          alt="star"
+        />
+        {score}. Scored by: {scored_by}
+      </div>
       <p>Type: {type}</p>
       <h3>Description: </h3>
       <p className="synopsis">{synopsis}</p>
@@ -37,7 +40,7 @@ function AnimeDetails({
           <span key={item.name}>{item.name}</span>
         ))}
       </p>
-      <h3>Openings</h3>
+      <h3>Openings:</h3>
       <ul>
         {opening_themes.map((item) => (
           <li className="themes" key={item}>
@@ -45,7 +48,7 @@ function AnimeDetails({
           </li>
         ))}
       </ul>
-      <h3>Endings</h3>
+      <h3>Endings:</h3>
       <ul>
         {ending_themes.map((item) => (
           <li className="themes" key={item}>

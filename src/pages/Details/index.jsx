@@ -12,10 +12,10 @@ function PageDetail({ match, history }) {
     return <RotateSpinner loading={loading} />;
   }
   return (
-    <div>
+    <article>
       <ButtonBack history={history} />
       <AnimeDetails {...anime} />
-    </div>
+    </article>
   );
 }
 

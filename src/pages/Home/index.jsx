@@ -13,6 +13,15 @@ function Home() {
   return (
     <div>
       <Header />
+      <span>
+        For a better experience enter this app on a cell phone. It will soon be
+        adapted to any screen. Thank for you understanding.
+      </span>
+      <br />
+      <span>
+        *Some searches may not return results because there is a problem with
+        the API.
+      </span>
       <section>
         <CardCategory
           title="Top Anime"

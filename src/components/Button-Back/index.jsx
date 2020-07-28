@@ -1,16 +1,11 @@
 import React from "react";
+import { ButtonBackStyled } from "./styles";
 
 function ButtonBack({ history }) {
   function handleClick() {
     history.goBack();
   }
-  return (
-    <div>
-      <button className="back" onClick={handleClick}>
-        Back
-      </button>
-    </div>
-  );
+  return <ButtonBackStyled onClick={handleClick}>Back</ButtonBackStyled>;
 }
 
 export default ButtonBack;
