@@ -14,7 +14,6 @@ function getSearchedAnimes({
     .then((response) => response.json())
     .then((data) => {
       const { results } = data; //Esta genial destructurar la data
-      console.log(results);
       const animes = results
         .filter((anime) => {
           var newTitle = anime.title.replace(/[ -:]/g, "");
