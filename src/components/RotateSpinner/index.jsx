@@ -49,20 +49,29 @@ export const RotateSpinner = ({ size, color, loading, sizeUnit }) => {
   const angle = 360 / countBalls;
   return (
     loading && (
-      <Wrapper size={size} sizeUnit={sizeUnit}>
-        {getBalls({
-          countBalls,
-          radius,
-          angle,
-          color,
-          size,
-          ballSize,
-          sizeUnit,
-        })}
-      </Wrapper>
+      <Center>
+        <Wrapper size={size} sizeUnit={sizeUnit}>
+          {getBalls({
+            countBalls,
+            radius,
+            angle,
+            color,
+            size,
+            ballSize,
+            sizeUnit,
+          })}
+        </Wrapper>
+      </Center>
     )
   );
 };
+
+const Center = styled.div`
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+`;
 
 const Wrapper = styled.div`
   position: relative;
@@ -94,8 +103,8 @@ const Ball = styled.div`
 
 RotateSpinner.defaultProps = {
   loading: true,
-  size: 45,
-  color: "#00ff89",
+  size: 120,
+  color: "red",
   sizeUnit: "px",
 };
 

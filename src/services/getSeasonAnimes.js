@@ -7,7 +7,6 @@ function getSeasonAnimes() {
     .then((response) => response.json())
     .then((data) => {
       const { anime } = data;
-      console.log(data);
       const seasonAnimes = anime.map((seasonAnime) => {
         const {
           image_url,
@@ -17,8 +16,18 @@ function getSeasonAnimes() {
           synopsis,
           score,
           episodes,
+          r18,
         } = seasonAnime;
-        return { image_url, mal_id, title, type, synopsis, score, episodes };
+        return {
+          image_url,
+          mal_id,
+          title,
+          type,
+          synopsis,
+          score,
+          episodes,
+          r18,
+        };
       });
       // .sort(function (prev, next) {
       //   if (prev.title > next.title) {

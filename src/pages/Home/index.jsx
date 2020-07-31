@@ -1,5 +1,5 @@
 import React from "react";
-
+import { HeadProvider, Title, Meta } from "react-head";
 // import useAnimes from "hooks/useAnimes";
 import Header from "components/Header";
 import CardCategory from "components/Card-Category";
@@ -13,6 +13,13 @@ function Home() {
   return (
     <div>
       <Header />
+      <HeadProvider>
+        <Title>Home || Anime Finder</Title>
+        <Meta
+          name="description"
+          content="Anime Finder is the site where you can find information about your favorite anime and more"
+        />
+      </HeadProvider>
       <span>
         For a better experience enter this app on a cell phone. It will soon be
         adapted to any screen. Thank for you understanding.

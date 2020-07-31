@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import getSearchedAnimes from "services/getSearchedAnimes";
 import AnimesContext from "context/AnimesContext";
 
-function useSearchedAnimes({ keyword } = "naruto") {
+function useSearchedAnimes({ keyword, rated }) {
   const [loading, setLoading] = useState(false);
   //Ahora actualizamos el estado global
   const { animes, setAnimes, setCheckedCategory } = useContext(AnimesContext);
@@ -10,12 +10,12 @@ function useSearchedAnimes({ keyword } = "naruto") {
   useEffect(() => {
     setLoading(true);
 
-    getSearchedAnimes({ keyword }).then((animes) => {
+    getSearchedAnimes({ keyword, rated }).then((animes) => {
       setAnimes(animes);
       setCheckedCategory("search");
       setLoading(false);
     });
-  }, [keyword, setAnimes, setCheckedCategory]);
+  }, [keyword, setAnimes, setCheckedCategory, rated]);
 
   return { loading, animes };
 }

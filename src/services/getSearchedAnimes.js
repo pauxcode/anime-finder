@@ -5,8 +5,14 @@ function getSearchedAnimes({
   keyword,
   limit = 25,
   page = 1,
+  rated,
 } = {}) {
-  const apiURL = `${API_URL}/search/${type}?q=${keyword}&limit=${limit}&page=${page}`;
+  var apiURL = "";
+  if (rated === "All") {
+    apiURL = `${API_URL}/search/${type}?q=${keyword}&limit=${limit}&page=${page}`;
+  } else {
+    apiURL = `${API_URL}/search/${type}?q=${keyword}&limit=${limit}&page=${page}&rated=${rated}`;
+  }
 
   const newKeyword = keyword.replace(/[ -:]/g, "");
 
@@ -20,8 +26,8 @@ function getSearchedAnimes({
           return newTitle.toLowerCase().includes(newKeyword.toLowerCase());
         })
         .map((anime) => {
-          const { mal_id, image_url, title, type, score } = anime;
-          return { mal_id, image_url, title, type, score };
+          const { mal_id, image_url, title, type, score, rated } = anime;
+          return { mal_id, image_url, title, type, score, rated };
         })
         .sort((prev, next) => {
           if (prev.title > next.title) {

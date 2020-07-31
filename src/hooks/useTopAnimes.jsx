@@ -8,12 +8,10 @@ function useTopAnimes() {
   const { topAnimes, setTopAnimes, setCheckedCategory } = useContext(
     AnimesContext
   );
-  console.log(topAnimes);
 
   useEffect(() => {
     setLoading(true);
     if (topAnimes.length <= 0) {
-      console.log("true");
       getTopAnimes().then((topAnimes) => {
         setTopAnimes(topAnimes);
         setCheckedCategory("top-anime");

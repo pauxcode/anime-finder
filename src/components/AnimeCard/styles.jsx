@@ -6,7 +6,7 @@ export const AnimeCardStyled = styled.div`
   img {
     width: 100%;
     height: 209px;
-    border-bottom: 3px solid #f2f679;
+    border-bottom: 3px solid #00ff89;
   }
   .information {
     h2 {

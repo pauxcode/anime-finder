@@ -6,7 +6,6 @@ function getTopAnimes() {
     .then((response) => response.json())
     .then((data) => {
       const { top } = data;
-      console.log(top);
       const animes = top.map(({ title, rank, image_url, mal_id, score }) => {
         return { title, rank, image_url, mal_id, score };
       });

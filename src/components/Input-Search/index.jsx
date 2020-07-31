@@ -1,18 +1,24 @@
-import React, { useState } from "react";
+import React from "react";
 import { useHistory } from "react-router-dom";
 import { InputSearchStyled } from "./styles";
+import useForm from "./hook";
 
-function InputSearch() {
-  const [keyword, setKeyword] = useState("");
+function InputSearch({ initialKeyword }) {
+  /* initialKeyword will be undefined until a search is done */
+  const { keyword, updateKeyword } = useForm({
+    initialKeyword,
+  });
+  const keywordValue = keyword || "";
+  /* Therefore "" will be its value */
   const history = useHistory();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    history.push(`/search/${keyword}`);
+    history.push(`/search/${keyword}/`);
   };
 
   const handleChange = (e) => {
-    setKeyword(e.target.value);
+    updateKeyword(e.target.value);
   };
   return (
     <InputSearchStyled>
@@ -21,7 +27,7 @@ function InputSearch() {
           placeholder="Search a anime here..."
           onChange={handleChange}
           type="text"
-          value={keyword}
+          value={keywordValue}
         />
       </form>
     </InputSearchStyled>

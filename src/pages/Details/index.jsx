@@ -1,4 +1,6 @@
 import React from "react";
+import { HeadProvider, Title, Meta } from "react-head";
+
 // import AnimesContext from "context/AnimesContext";
 import { RotateSpinner } from "components/RotateSpinner";
 import AnimeDetails from "components/AnimeDetails";
@@ -9,13 +11,26 @@ function PageDetail({ match, history }) {
   const mal_id = match.params.id;
   const { anime, loading } = useSingleAnime({ mal_id });
   if (loading) {
-    return <RotateSpinner loading={loading} />;
+    return (
+      <>
+        <HeadProvider>
+          <Title>Cargando...</Title>
+        </HeadProvider>
+        <RotateSpinner loading={loading} />
+      </>
+    );
   }
   return (
-    <article>
-      <ButtonBack history={history} />
-      <AnimeDetails {...anime} />
-    </article>
+    <>
+      <HeadProvider>
+        <Title>{anime.title} || Anime Finder</Title>
+        <Meta name="description" content={anime.title} />
+      </HeadProvider>
+      <article>
+        <ButtonBack history={history} />
+        <AnimeDetails {...anime} />
+      </article>
+    </>
   );
 }
 
