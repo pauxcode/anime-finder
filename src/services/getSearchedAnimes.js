@@ -9,6 +9,7 @@ function getSearchedAnimes({
 } = {}) {
   var apiURL = "";
   if (rated === "All") {
+    console.log("Entro en ALL Search");
     apiURL = `${API_URL}/search/${type}?q=${keyword}&limit=${limit}&page=${page}`;
   } else {
     apiURL = `${API_URL}/search/${type}?q=${keyword}&limit=${limit}&page=${page}&rated=${rated}`;

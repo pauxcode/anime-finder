@@ -1,7 +1,18 @@
 import { API_URL } from "./settings";
-const api_URL = `${API_URL}/top/anime`;
+// const api_URL = `${API_URL}/top/anime`;
 
-function getTopAnimes() {
+function getTopAnimes({ type }) {
+  console.log("desde el service ", type);
+  var apiURL = "";
+  if (type === "All") {
+    console.log("entro en All");
+    apiURL = `${API_URL}/top/anime/1`;
+  } else {
+    console.log("entro en else");
+    apiURL = `${API_URL}/top/anime/1/${type}`;
+  }
+  const api_URL = apiURL;
+
   return fetch(api_URL)
     .then((response) => response.json())
     .then((data) => {

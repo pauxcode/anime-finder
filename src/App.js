@@ -17,7 +17,7 @@ function App() {
       <Switch>
         <AnimesContextProvider>
           <Route exact path="/" component={Home} />
-          <Route exact path="/top/anime" component={TopAnime} />
+          <Route exact path="/top/anime/:type?" component={TopAnime} />
           <Route exact path="/season/anime" component={SeasonAnime} />
           <Route path="/search/:keyword/:rated?" component={SearchResults} />
           <Route path="/anime/:id" component={PageDetail} />
