@@ -13,4 +13,11 @@ export const AnimeCardStyled = styled.div`
       font-size: 15px;
     }
   }
+  i.fas,
+  i.fab {
+    border: 1px solid black;
+  }
+  .fa-star {
+    color: yellow;
+  }
 `;

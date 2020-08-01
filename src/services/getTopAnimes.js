@@ -2,13 +2,10 @@ import { API_URL } from "./settings";
 // const api_URL = `${API_URL}/top/anime`;
 
 function getTopAnimes({ type }) {
-  console.log("desde el service ", type);
   var apiURL = "";
   if (type === "All") {
-    console.log("entro en All");
     apiURL = `${API_URL}/top/anime/1`;
   } else {
-    console.log("entro en else");
     apiURL = `${API_URL}/top/anime/1/${type}`;
   }
   const api_URL = apiURL;
@@ -17,9 +14,29 @@ function getTopAnimes({ type }) {
     .then((response) => response.json())
     .then((data) => {
       const { top } = data;
-      const animes = top.map(({ title, rank, image_url, mal_id, score }) => {
-        return { title, rank, image_url, mal_id, score };
-      });
+      const animes = top.map(
+        ({
+          mal_id,
+          rank,
+          title,
+          image_url,
+          type,
+          episodes,
+          members,
+          score,
+        }) => {
+          return {
+            mal_id,
+            rank,
+            title,
+            image_url,
+            type,
+            episodes,
+            members,
+            score,
+          };
+        }
+      );
       return animes;
     });
 }

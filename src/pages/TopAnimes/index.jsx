@@ -2,8 +2,8 @@ import React from "react";
 import { HeadProvider, Title, Meta } from "react-head";
 
 import useTopAnimes from "hooks/useTopAnimes";
-import { RotateSpinner } from "components/RotateSpinner";
 
+import { RotateSpinner } from "components/RotateSpinner";
 import Header from "components/Header";
 import SelectCategory from "components/Select-Category";
 import ListOfAnimes from "components/List-Of-Animes";
@@ -11,7 +11,7 @@ import ListOfAnimes from "components/List-Of-Animes";
 function TopAnimes({ match }) {
   const { params } = match;
   const { type = "All" } = params;
-  const { loading, topAnimes } = useTopAnimes({ type });
+  const { topAnimes, loading } = useTopAnimes({ type });
   if (loading) {
     return (
       <>

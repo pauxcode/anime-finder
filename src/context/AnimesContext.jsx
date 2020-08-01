@@ -7,8 +7,6 @@ export function AnimesContextProvider({ children }) {
   const [topAnimes, setTopAnimes] = useState([]);
   const [seasonAnimes, setSeasonAnimes] = useState([]);
 
-  const [checkedCategory, setCheckedCategory] = useState("");
-
   return (
     <Context.Provider
       value={{
@@ -16,8 +14,6 @@ export function AnimesContextProvider({ children }) {
         setAnimes,
         topAnimes,
         setTopAnimes,
-        checkedCategory,
-        setCheckedCategory,
         seasonAnimes,
         setSeasonAnimes,
       }}

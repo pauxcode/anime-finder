@@ -1,54 +1,50 @@
 import React from "react";
+
 import { useHistory } from "react-router-dom";
+
 import { AnimeCardStyled } from "./styles";
 
 function Anime({
   id,
-  image_url,
-  title,
-  type,
-  score,
   rank,
+  title,
+  image,
+  type,
   episodes,
   members,
+  score,
+  seccion,
   r18,
   rated,
 }) {
   const history = useHistory();
+
   function handleClick() {
     history.push(`/anime/${id}`);
   }
-  if (type === undefined) {
+
+  if (seccion === "top-animes") {
     return (
       <AnimeCardStyled onClick={handleClick}>
-        <img
-          loading="lazy"
-          alt={title}
-          src={image_url}
-          width="128"
-          height="209"
-        />
+        <img loading="lazy" alt={title} src={image} width="128" height="209" />
         <div className="information">
           <h2>{title}</h2>
           <p>Rank: {rank}</p>
           <p>
-            {type}({episodes})
+            {type === "TV" ? <i className="fas fa-tv"></i> : type} ({episodes})
           </p>
-          <p>Score: {score}</p>
-          <p>{members}</p>
+          <p>
+            <i className="fas fa-star"></i> {score}
+            {"  "}
+            <i className="fas fa-child"></i> {members}
+          </p>
         </div>
       </AnimeCardStyled>
     );
   } else {
     return (
       <AnimeCardStyled onClick={handleClick}>
-        <img
-          loading="lazy"
-          alt={title}
-          src={image_url}
-          height="209"
-          width="128"
-        />
+        <img loading="lazy" alt={title} src={image} height="209" width="128" />
         <div className="information">
           <h2>{title}</h2>
           <p>

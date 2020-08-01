@@ -1,24 +1,37 @@
 import React from "react";
-import Anime from "../AnimeCard";
+
 import { ListOfAnimesStyled } from "./styles";
 
+import Anime from "../AnimeCard";
+
 function ListOfAnimes({ animes, seccion }) {
-  if (seccion === "top-anime") {
+  if (seccion === "top-animes") {
     return (
       <ListOfAnimesStyled>
         {animes.map(
-          ({ mal_id, image_url, title, score, rank, type, episodes }) => {
+          ({
+            mal_id,
+            rank,
+            title,
+            image_url,
+            type,
+            episodes,
+            members,
+            score,
+          }) => {
             //Extraemos los datos que nos llegan :b
             return (
               <Anime
                 key={mal_id}
                 id={mal_id}
-                image_url={image_url}
-                title={title}
-                type={type}
-                episodes={episodes === null ? type : episodes}
-                score={score}
                 rank={rank}
+                title={title}
+                image={image_url}
+                type={type}
+                episodes={episodes}
+                members={members}
+                score={score}
+                seccion={seccion}
               />
             );
           }

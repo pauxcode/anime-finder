@@ -4,7 +4,16 @@ import { useHistory } from "react-router-dom";
 import useForm from "hooks/updateParams";
 
 const RATEDS = ["g", "pg", "pg13", "r17", "r", "rx"];
-const TYPE = ["bypopularity", "favorite"];
+const TYPE = [
+  "bypopularity",
+  "favorite",
+  "airing",
+  "upcoming",
+  "tv",
+  "movie",
+  "ova",
+  "special",
+];
 
 function SelectCategory({ keyword, rated, seccion, type }) {
   const history = useHistory();
