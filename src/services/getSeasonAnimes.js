@@ -9,23 +9,25 @@ function getSeasonAnimes() {
       const { anime } = data;
       const seasonAnimes = anime.map((seasonAnime) => {
         const {
-          image_url,
           mal_id,
           title,
+          image_url,
           type,
-          synopsis,
-          score,
+          airing_start,
           episodes,
+          members,
+          score,
           r18,
         } = seasonAnime;
         return {
-          image_url,
           mal_id,
           title,
+          image_url,
           type,
-          synopsis,
-          score,
+          airing_start,
           episodes,
+          members,
+          score,
           r18,
         };
       });

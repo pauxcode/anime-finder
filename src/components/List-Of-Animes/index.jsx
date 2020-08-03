@@ -38,23 +38,68 @@ function ListOfAnimes({ animes, seccion }) {
         )}
       </ListOfAnimesStyled>
     );
-  } else {
+  } else if (seccion === "search") {
     return (
       <ListOfAnimesStyled>
         {animes.map(
-          ({ mal_id, image_url, title, type, score, episodes, r18, rated }) => {
+          ({
+            mal_id,
+            image_url,
+            title,
+            type,
+            episodes,
+            score,
+            members,
+            rated,
+          }) => {
             //Extraemos los datos que nos llegan :b
             return (
               <Anime
                 key={mal_id}
                 id={mal_id}
-                image_url={image_url}
+                image={image_url}
                 title={title}
                 type={type}
                 episodes={episodes}
                 score={score}
-                r18={r18}
+                members={members}
                 rated={rated}
+                seccion={seccion}
+              />
+            );
+          }
+        )}
+      </ListOfAnimesStyled>
+    );
+  } else if (seccion === "season-animes") {
+    return (
+      <ListOfAnimesStyled>
+        {animes.map(
+          ({
+            mal_id,
+            title,
+            image_url,
+            type,
+            airing_start,
+            episodes,
+            members,
+            score,
+            r18,
+          }) => {
+            //Extraemos los datos que nos llegan :b
+            return (
+              <Anime
+                key={mal_id}
+                id={mal_id}
+                title={title}
+                image={image_url}
+                type={type}
+                airing_start={airing_start}
+                episodes={episodes}
+                members={members}
+                score={score}
+                r18={r18}
+                seccion={seccion}
               />
             );
           }

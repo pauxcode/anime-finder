@@ -5,19 +5,18 @@ import AnimesContext from "context/AnimesContext";
 function useSearchedAnimes({ keyword, rated }) {
   const [loading, setLoading] = useState(false);
   //Ahora actualizamos el estado global
-  const { animes, setAnimes, setCheckedCategory } = useContext(AnimesContext);
+  const { animeSearched, setAnimeSearched } = useContext(AnimesContext);
 
   useEffect(() => {
     setLoading(true);
 
     getSearchedAnimes({ keyword, rated }).then((animes) => {
-      setAnimes(animes);
-      setCheckedCategory("search");
+      setAnimeSearched(animes);
       setLoading(false);
     });
-  }, [keyword, setAnimes, setCheckedCategory, rated]);
+  }, [keyword, setAnimeSearched, rated]);
 
-  return { loading, animes };
+  return { loading, animeSearched };
 }
 
 export default useSearchedAnimes;

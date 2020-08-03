@@ -27,8 +27,26 @@ function getSearchedAnimes({
           return newTitle.toLowerCase().includes(newKeyword.toLowerCase());
         })
         .map((anime) => {
-          const { mal_id, image_url, title, type, score, rated } = anime;
-          return { mal_id, image_url, title, type, score, rated };
+          const {
+            mal_id,
+            image_url,
+            title,
+            type,
+            episodes,
+            score,
+            members,
+            rated,
+          } = anime;
+          return {
+            mal_id,
+            image_url,
+            title,
+            type,
+            episodes,
+            score,
+            members,
+            rated,
+          };
         })
         .sort((prev, next) => {
           if (prev.title > next.title) {

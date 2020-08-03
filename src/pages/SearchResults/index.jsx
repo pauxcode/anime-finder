@@ -12,7 +12,7 @@ import SelectCategory from "components/Select-Category";
 function SearchResults({ match }) {
   const { params } = match;
   const { keyword, rated = "All" } = params; //In the first search el rated come undefined so be for default "All" by show all the results :b *Sorry for my english
-  const { loading, animes } = useSearchedAnimes({ keyword, rated });
+  const { loading, animeSearched } = useSearchedAnimes({ keyword, rated });
 
   if (loading) {
     return <RotateSpinner loading={loading} />;
@@ -27,7 +27,7 @@ function SearchResults({ match }) {
       <Header initialKeyword={keyword} />
       <SelectCategory keyword={keyword} rated={rated} seccion="search" />
       <h2>{keyword}</h2>
-      <ListOfAnimes animes={animes} />
+      <ListOfAnimes animes={animeSearched} seccion="search" />
     </div>
   );
 }

@@ -26,7 +26,7 @@ function SeasonAnime() {
       </HeadProvider>
       <Header />
 
-      <ListOfAnimes animes={seasonAnimes} seccion="season-anime" />
+      <ListOfAnimes animes={seasonAnimes} seccion="season-animes" />
     </div>
   );
 }

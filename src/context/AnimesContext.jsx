@@ -3,15 +3,15 @@ import React, { useState } from "react";
 const Context = React.createContext({});
 
 export function AnimesContextProvider({ children }) {
-  const [animes, setAnimes] = useState([]);
+  const [animeSearched, setAnimeSearched] = useState([]);
   const [topAnimes, setTopAnimes] = useState([]);
   const [seasonAnimes, setSeasonAnimes] = useState([]);
 
   return (
     <Context.Provider
       value={{
-        animes,
-        setAnimes,
+        animeSearched,
+        setAnimeSearched,
         topAnimes,
         setTopAnimes,
         seasonAnimes,
