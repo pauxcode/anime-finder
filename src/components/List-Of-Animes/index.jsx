@@ -2,7 +2,9 @@ import React from "react";
 
 import { ListOfAnimesStyled } from "./styles";
 
-import Anime from "../AnimeCard";
+import TopAnime from "components/AnimeCard/Top-Anime";
+import SeasonAnime from "components/AnimeCard/Season-Anime";
+import SearchedAnime from "components/AnimeCard/Searched-Anime";
 
 function ListOfAnimes({ animes, seccion }) {
   if (seccion === "top-animes") {
@@ -21,7 +23,7 @@ function ListOfAnimes({ animes, seccion }) {
           }) => {
             //Extraemos los datos que nos llegan :b
             return (
-              <Anime
+              <TopAnime
                 key={mal_id}
                 id={mal_id}
                 rank={rank}
@@ -31,7 +33,6 @@ function ListOfAnimes({ animes, seccion }) {
                 episodes={episodes}
                 members={members}
                 score={score}
-                seccion={seccion}
               />
             );
           }
@@ -54,7 +55,7 @@ function ListOfAnimes({ animes, seccion }) {
           }) => {
             //Extraemos los datos que nos llegan :b
             return (
-              <Anime
+              <SearchedAnime
                 key={mal_id}
                 id={mal_id}
                 image={image_url}
@@ -64,7 +65,6 @@ function ListOfAnimes({ animes, seccion }) {
                 score={score}
                 members={members}
                 rated={rated}
-                seccion={seccion}
               />
             );
           }
@@ -88,7 +88,7 @@ function ListOfAnimes({ animes, seccion }) {
           }) => {
             //Extraemos los datos que nos llegan :b
             return (
-              <Anime
+              <SeasonAnime
                 key={mal_id}
                 id={mal_id}
                 title={title}
@@ -99,7 +99,6 @@ function ListOfAnimes({ animes, seccion }) {
                 members={members}
                 score={score}
                 r18={r18}
-                seccion={seccion}
               />
             );
           }

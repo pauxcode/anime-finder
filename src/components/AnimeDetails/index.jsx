@@ -19,7 +19,7 @@ function AnimeDetails({
         className="iframe"
         src={trailer_url}
         frameBorder="0"
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
       ></iframe>
       <h2>{title}</h2>

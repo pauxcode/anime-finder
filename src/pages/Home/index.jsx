@@ -1,15 +1,10 @@
 import React from "react";
 import { HeadProvider, Title, Meta } from "react-head";
-// import useAnimes from "hooks/useAnimes";
+
 import Header from "components/Header";
 import CardCategory from "components/Card-Category";
 
-// import ListOfAnimes from "components/ListOfAnimes";
-
 function Home() {
-  // const { loading, animes } = useAnimes();
-  // const { animes } = useAnimes();
-
   return (
     <div>
       <Header />
@@ -20,19 +15,10 @@ function Home() {
           content="Anime Finder is the site where you can find information about your favorite anime and more"
         />
       </HeadProvider>
-      <span>
-        For a better experience enter this app on a cell phone. It will soon be
-        adapted to any screen. Thank for you understanding.
-      </span>
-      <br />
-      <span>
-        *Some searches may not return results because there is a problem with
-        the API.
-      </span>
       <section>
         <CardCategory
           title="Top Anime"
-          description="Animes best value for the community (Alpha)"
+          description="Animes best value for the community (Beta)"
           link="/top/anime"
         />
         <CardCategory
@@ -49,8 +35,6 @@ function Home() {
           description="Nothingt. Not enter"
         />
       </section>
-      {/* <Seasons /> */}
-      {/* <ListOfAnimes animes={animes} /> */}
     </div>
   );
 }

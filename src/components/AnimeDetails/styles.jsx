@@ -24,8 +24,19 @@ export const AnimeDetailsStyled = styled.div`
       width: 91px;
       text-align: center;
       background: var(--white);
+      border: 0.5px solid var(--black);
       border-radius: 5px;
       box-shadow: 0 0 7px 2px rgba(0, 0, 0, 0.03);
+    }
+    span:hover {
+      cursor: pointer;
+      border: 1px solid darkred;
+    }
+  }
+
+  @media (min-width: 700px) {
+    .iframe {
+      height: 370px;
     }
   }
 `;
