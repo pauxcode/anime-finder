@@ -10,6 +10,7 @@ import TopAnime from "pages/TopAnimes";
 import SeasonAnime from "pages/SeasonAnime";
 import SearchResults from "./pages/SearchResults";
 import PageDetail from "./pages/Details";
+import Soon from "pages/Soon";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route exact path="/season/anime" component={SeasonAnime} />
           <Route path="/search/:keyword/:rated?" component={SearchResults} />
           <Route path="/anime/:id" component={PageDetail} />
+          <Route path="/soon" component={Soon} />
         </AnimesContextProvider>
       </Switch>
     </Router>

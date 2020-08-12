@@ -3,7 +3,8 @@ import styled from "styled-components";
 export const AnimeCardStyled = styled.div`
   cursor: pointer;
   background: var(--white);
-  padding: 0 10px;
+  width: 150px;
+  margin-bottom: 10px;
   box-shadow: 0 0 7px 2px rgba(0, 0, 0, 0.03);
   border: 1px solid transparent;
   transition: 0.3s border;
@@ -33,5 +34,11 @@ export const AnimeCardStyled = styled.div`
   }
   .fa-star {
     color: yellow;
+  }
+  @media (min-width: 1024px) {
+    width: 200px;
+    img {
+      height: 285px;
+    }
   }
 `;

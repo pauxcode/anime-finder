@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const HeaderStyled = styled.div`
-  .header {
+  border-bottom: 1px solid var(--blanck);
+  .header nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -11,6 +12,11 @@ export const HeaderStyled = styled.div`
 
     margin-bottom: 10px;
   }
+  /* nav {
+    border: 1px solid red;
+    position: sticky;
+    top: 0;
+  } */
   .input {
     width: 50%;
   }
@@ -23,15 +29,9 @@ export const HeaderStyled = styled.div`
     .header {
       justify-content: space-between;
       box-sizing: border-box;
-      padding: 0 20px 0 50px;
     }
     .input {
       width: 30%;
-    }
-  }
-  @media (min-width: 1440px) {
-    .header {
-      padding: 0 20px 0 70px;
     }
   }
 `;

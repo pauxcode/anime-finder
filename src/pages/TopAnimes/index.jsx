@@ -3,6 +3,7 @@ import { HeadProvider, Title, Meta } from "react-head";
 
 import useTopAnimes from "hooks/useTopAnimes";
 
+import Wrapper from "components/Wrapper";
 import { RotateSpinner } from "components/RotateSpinner";
 import Header from "components/Header";
 import SelectCategory from "components/Select-Category";
@@ -23,15 +24,17 @@ function TopAnimes({ match }) {
     );
   }
   return (
-    <div>
+    <Wrapper>
       <HeadProvider>
         <Title>Top Animes || Anime Finder</Title>
         <Meta name="description" content="Top Animes" />
       </HeadProvider>
-      <Header />
+      <div className="header">
+        <Header />
+      </div>
       <SelectCategory type={type} seccion="top-animes" />
       <ListOfAnimes animes={topAnimes} seccion="top-animes" />
-    </div>
+    </Wrapper>
   );
 }
 

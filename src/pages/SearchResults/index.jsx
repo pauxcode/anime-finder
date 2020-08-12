@@ -2,6 +2,7 @@ import React from "react";
 // import { useHistory } from "react-router-dom";
 
 import { HeadProvider, Title, Meta } from "react-head";
+import Wrapper from "components/Wrapper";
 import { RotateSpinner } from "components/RotateSpinner";
 import ListOfAnimes from "components/List-Of-Animes";
 import useSearchedAnimes from "hooks/useSearchedAnimes";
@@ -19,16 +20,18 @@ function SearchResults({ match }) {
   }
 
   return (
-    <div>
+    <Wrapper>
       <HeadProvider>
         <Title>{keyword} || Anime Finder</Title>
         <Meta name="description" content={`search of ${keyword}`} />
       </HeadProvider>
-      <Header initialKeyword={keyword} />
+      <div className="header">
+        <Header initialKeyword={keyword} />
+      </div>
       <SelectCategory keyword={keyword} rated={rated} seccion="search" />
       <h2>{keyword}</h2>
       <ListOfAnimes animes={animeSearched} seccion="search" />
-    </div>
+    </Wrapper>
   );
 }
 

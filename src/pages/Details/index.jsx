@@ -2,6 +2,7 @@ import React from "react";
 import { HeadProvider, Title, Meta } from "react-head";
 
 // import AnimesContext from "context/AnimesContext";
+import Wrapper from "components/Wrapper";
 import { RotateSpinner } from "components/RotateSpinner";
 import AnimeDetails from "components/AnimeDetails";
 import ButtonBack from "components/Button-Back";
@@ -21,7 +22,7 @@ function PageDetail({ match, history }) {
     );
   }
   return (
-    <>
+    <Wrapper>
       <HeadProvider>
         <Title>{anime.title} || Anime Finder</Title>
         <Meta name="description" content={anime.title} />
@@ -30,7 +31,7 @@ function PageDetail({ match, history }) {
         <ButtonBack history={history} />
         <AnimeDetails {...anime} />
       </article>
-    </>
+    </Wrapper>
   );
 }
 

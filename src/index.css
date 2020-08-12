@@ -3,7 +3,10 @@
   --white: white;
   --background: #fafafa;
 }
-
+.header {
+  position: sticky;
+  top: 0;
+}
 body {
   margin: 0;
   padding: 0;
@@ -14,6 +17,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-y: scroll;
+  overscroll-behavior-y: none;
 }
 
 code {

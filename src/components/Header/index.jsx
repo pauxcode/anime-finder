@@ -7,12 +7,14 @@ function Header({ initialKeyword }) {
   return (
     <HeaderStyled>
       <header className="header">
-        <Link to="/" className="link-home">
-          Anime Finder
-        </Link>
-        <div className="input">
-          <InputSearch initialKeyword={initialKeyword} />
-        </div>
+        <nav>
+          <Link to="/" className="link-home">
+            Anime Finder
+          </Link>
+          <div className="input">
+            <InputSearch initialKeyword={initialKeyword} />
+          </div>
+        </nav>
       </header>
     </HeaderStyled>
   );
