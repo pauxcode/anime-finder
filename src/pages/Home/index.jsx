@@ -5,7 +5,7 @@ import { HeadProvider, Title, Meta } from "react-head";
 
 // import styled from "styled-components";
 import Wrapper from "components/Wrapper";
-import { HomeStyled } from "./styles";
+import { HomeStyled, PromptStyled } from "./styles";
 import Header from "components/Header";
 import CardCategory from "components/Card-Category";
 import Footer from "components/Footer";
@@ -49,26 +49,21 @@ function Home() {
       </Wrapper>
       <Footer />
       {/* <!-- Mensaje de Instalacion --> */}
-      <div id="prompt" class="prompt hide bg-light border-top">
-        <div class="font-weight-bold">Add to Home screen</div>
-        <small>This app can be installed in your home screen</small>
-        <div class="text-right">
-          <button
-            id="buttonCancel"
-            type="button"
-            class="font-weight-bold text-muted btn-sm btn btn-link"
-          >
-            CANCEL
-          </button>
-          <button
-            id="buttonAdd"
-            type="button"
-            class="font-weight-bold text-primary btn-sm btn btn-link"
-          >
-            ADD
-          </button>
+      {/* <div id="prompt" className="prompt hide bg-light border-top"> */}
+      <PromptStyled>
+        <div id="prompt" className="prompt show">
+          <h3>Add to Home screen</h3>
+          <small>This app can be installed in your home screen</small>
+          <div className="buttons">
+            <button id="buttonCancel" type="button" className="btn btn-cancel">
+              CANCEL
+            </button>
+            <button id="buttonAdd" type="button" className="btn btn-add">
+              ADD
+            </button>
+          </div>
         </div>
-      </div>
+      </PromptStyled>
     </>
   );
 }
