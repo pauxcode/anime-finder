@@ -2,6 +2,8 @@ import React from "react";
 import { CardCategoryStyled } from "./styles";
 import { useHistory } from "react-router-dom";
 
+import imgseccion from "images/seccion.jpg";
+
 function CardCategory({ title, description, link }) {
   const history = useHistory();
   function handleClick() {
@@ -11,8 +13,11 @@ function CardCategory({ title, description, link }) {
     <CardCategoryStyled onClick={handleClick}>
       <div className="image">
         <img
+          src={imgseccion}
           alt="anime category"
-          src="https://finde.latercera.com/wp-content/uploads/2020/06/Amor-de-gata-2-700x450.jpg"
+          lazy="loading"
+          width="248px"
+          height="160px"
         />
       </div>
       <div className="details">
