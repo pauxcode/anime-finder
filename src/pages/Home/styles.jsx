@@ -10,7 +10,6 @@ export const HomeStyled = styled.div`
 
 export const PromptStyled = styled.div`
   .prompt {
-    background-image: url("./static/media/favicon-96x96.50761cf8.png");
     background-position-x: 1rem;
     background-position-y: 1.5rem;
     background-repeat: no-repeat;

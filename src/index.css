@@ -29,3 +29,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.prompt {
+  background-image: url(./images/ms-icon-150x150.png);
+}

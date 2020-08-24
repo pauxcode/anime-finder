@@ -1,9 +1,6 @@
 import React from "react";
 import { HeadProvider, Title, Meta } from "react-head";
 
-// import * as buttonAdd from './buttonAdd'
-
-// import styled from "styled-components";
 import Wrapper from "components/Wrapper";
 import { HomeStyled, PromptStyled } from "./styles";
 import Header from "components/Header";
@@ -48,10 +45,9 @@ function Home() {
         </HomeStyled>
       </Wrapper>
       <Footer />
-      {/* <!-- Mensaje de Instalacion --> */}
-      {/* <div id="prompt" className="prompt hide bg-light border-top"> */}
+      {/* <!-- Message of instalation --> */}
       <PromptStyled>
-        <div id="prompt" className="prompt show">
+        <div id="prompt" className="prompt hide">
           <h3>Add to Home screen</h3>
           <small>This app can be installed in your home screen</small>
           <div className="buttons">
