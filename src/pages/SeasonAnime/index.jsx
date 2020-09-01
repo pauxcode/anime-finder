@@ -9,6 +9,7 @@ import { RotateSpinner } from "components/RotateSpinner";
 
 function SeasonAnime() {
   const { loading, seasonAnimes } = useSeasonAnimes();
+  console.log(seasonAnimes);
   if (loading) {
     return (
       <>

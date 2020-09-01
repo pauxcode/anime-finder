@@ -23,23 +23,23 @@ function Home() {
         </HeadProvider>
         <HomeStyled>
           <CardCategory
-            title="Top Anime"
+            title="Top Animes"
             description="Animes best value for the community (Beta)"
             link="/top/anime"
           />
           <CardCategory
-            title="Season Anime"
+            title="Season Animes"
             description="Animes this season (Beta)"
             link="/season/anime"
           />
           <CardCategory
-            title="Top Manga"
-            description="Manga section soon"
-            link="/soon"
+            title="Schedule Animes"
+            description="Anime schedule of the week or specified day"
+            link="/schedule/anime"
           />
           <CardCategory
-            title="Schedule section soon"
-            description="Anime schedule of the week or specified day"
+            title="Top Manga"
+            description="Manga section soon"
             link="/soon"
           />
         </HomeStyled>

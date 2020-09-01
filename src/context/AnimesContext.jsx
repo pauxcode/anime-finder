@@ -6,6 +6,7 @@ export function AnimesContextProvider({ children }) {
   const [animeSearched, setAnimeSearched] = useState([]);
   const [topAnimes, setTopAnimes] = useState([]);
   const [seasonAnimes, setSeasonAnimes] = useState([]);
+  const [scheduleAnimes, setScheduleAnimes] = useState([])
 
   return (
     <Context.Provider
@@ -16,6 +17,8 @@ export function AnimesContextProvider({ children }) {
         setTopAnimes,
         seasonAnimes,
         setSeasonAnimes,
+        scheduleAnimes,
+        setScheduleAnimes
       }}
     >
       {children}
