@@ -35,7 +35,7 @@ function Home() {
           <CardCategory
             title="Schedule Animes"
             description="Anime schedule of the week or specified day"
-            link="/schedule/anime"
+            link="/schedule"
           />
           <CardCategory
             title="Top Manga"

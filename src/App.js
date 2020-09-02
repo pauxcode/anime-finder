@@ -21,7 +21,7 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route exact path="/top/anime/:type?" component={TopAnime} />
           <Route exact path="/season/anime" component={SeasonAnime} />
-          <Route exact path='/schedule/anime' component={ScheduleAnimes} />
+          <Route exact path='/schedule/:day?' component={ScheduleAnimes} />
           <Route path="/search/:keyword/:rated?" component={SearchResults} />
           <Route path="/anime/:id" component={PageDetail} />
           <Route path="/soon" component={Soon} />
