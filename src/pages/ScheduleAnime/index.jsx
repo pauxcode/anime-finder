@@ -48,8 +48,11 @@ function ScheduleAnime({ match }) {
                 <Header />
             </div>
             <SelectDay day={day} />
-            {console.log(scheduleAnimesMonday)}
-            {scheduleAnimesMonday === [] ?
+
+            {/* {
+                scheduleAnimesMonday.length === 0 ? console.log("Esta vacio") : console.log("No esta vacio")
+            } */}
+            {scheduleAnimesMonday.length === 0 ?
                 <></>
                 :
                 <section>
@@ -57,7 +60,7 @@ function ScheduleAnime({ match }) {
                     <ListOfAnimes animes={scheduleAnimesMonday} seccion="schedule-animes" />
                 </section>
             }
-            {scheduleAnimesTuesday === [] ?
+            {scheduleAnimesTuesday.length === 0 ?
                 <></>
                 :
                 <section>
@@ -65,7 +68,7 @@ function ScheduleAnime({ match }) {
                     <ListOfAnimes animes={scheduleAnimesTuesday} seccion="schedule-animes" />
                 </section>
             }
-            {scheduleAnimesWednesday === [] ?
+            {scheduleAnimesWednesday.length === 0 ?
                 <></>
                 :
                 <section>
@@ -73,7 +76,7 @@ function ScheduleAnime({ match }) {
                     <ListOfAnimes animes={scheduleAnimesWednesday} seccion="schedule-animes" />
                 </section>
             }
-            {scheduleAnimesThursday === [] ?
+            {scheduleAnimesThursday.length === 0 ?
                 <></>
                 :
                 <section>
@@ -81,7 +84,7 @@ function ScheduleAnime({ match }) {
                     <ListOfAnimes animes={scheduleAnimesThursday} seccion="schedule-animes" />
                 </section>
             }
-            {scheduleAnimesFriday === [] ?
+            {scheduleAnimesFriday.length === 0 ?
                 <></>
                 :
                 <section>
@@ -89,7 +92,7 @@ function ScheduleAnime({ match }) {
                     <ListOfAnimes animes={scheduleAnimesFriday} seccion="schedule-animes" />
                 </section>
             }
-            {scheduleAnimesSaturday === [] ?
+            {scheduleAnimesSaturday.length === 0 ?
                 <></>
                 :
                 <section>
@@ -97,7 +100,7 @@ function ScheduleAnime({ match }) {
                     <ListOfAnimes animes={scheduleAnimesSaturday} seccion="schedule-animes" />
                 </section>
             }
-            {scheduleAnimesSunday === [] ?
+            {scheduleAnimesSunday.length === 0 ?
                 <></>
                 :
                 <section>
@@ -105,7 +108,7 @@ function ScheduleAnime({ match }) {
                     <ListOfAnimes animes={scheduleAnimesSunday} seccion="schedule-animes" />
                 </section>
             }
-            {scheduleAnimesOther === [] ?
+            {scheduleAnimesOther.length === 0 ?
                 <></>
                 :
                 <section>
@@ -113,7 +116,7 @@ function ScheduleAnime({ match }) {
                     <ListOfAnimes animes={scheduleAnimesOther} seccion="schedule-animes" />
                 </section>
             }
-            {scheduleAnimesUnknown === [] ?
+            {scheduleAnimesUnknown.length === 0 ?
                 <></>
                 :
                 <section>
