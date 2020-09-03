@@ -1,21 +1,29 @@
 import { useContext, useEffect, useState } from "react";
 
-import getTopAnimes from "services/getTopAnimes";
+import getTopAnimes from "services/getTop";
+import getTopMangas from "services/Top/Mangas"
 
 import AnimesContext from "context/AnimesContext";
 
-function useTopAnimes({ type }) {
+function useTop({ type, subType }) {
   const [loading, setLoading] = useState(false);
   //Ahora actualizamos el estado global
-  const { topAnimes, setTopAnimes } = useContext(AnimesContext);
+  const { topAnimes, setTopAnimes, topMangas, setTopMangas } = useContext(AnimesContext);
 
   useEffect(() => {
     setLoading(true);
 
-    getTopAnimes({ type }).then((topAnimes) => {
-      setTopAnimes(topAnimes);
-      setLoading(false);
-    });
+    if (type === "anime") {
+      getTopAnimes({ type, subType }).then((topAnimes) => {
+        setTopAnimes(topAnimes);
+        setLoading(false);
+      });
+    } else {
+      getTopMangas({ type, subType }).then((topMangas) => {
+        setTopMangas(topMangas);
+        setLoading(false)
+      })
+    }
     // if (topAnimes.length <= 0 || type != "All") {
     //   getTopAnimes({ type }).then((topAnimes) => {
     //     setTopAnimes(topAnimes);
@@ -29,9 +37,9 @@ function useTopAnimes({ type }) {
     //   setCheckedCategory("top-anime");
     //   setLoading(false);
     // }
-  }, [setTopAnimes, type]);
+  }, [setTopAnimes, setTopMangas, type, subType]);
 
-  return { topAnimes, loading };
+  return { topAnimes, topMangas, loading };
 }
 
-export default useTopAnimes;
+export default useTop;

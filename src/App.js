@@ -6,7 +6,8 @@ import { AnimesContextProvider } from "./context/AnimesContext";
 
 //PAGES
 import Home from "./pages/Home";
-import TopAnime from "pages/TopAnimes";
+import TopAnime from "pages/Top";
+import TopMangas from "pages/Top/Manga"
 import SeasonAnime from "pages/SeasonAnime";
 import ScheduleAnimes from 'pages/ScheduleAnime'
 import SearchResults from "./pages/SearchResults";
@@ -19,7 +20,8 @@ function App() {
       <Switch>
         <AnimesContextProvider>
           <Route exact path="/" component={Home} />
-          <Route exact path="/top/anime/:type?" component={TopAnime} />
+          <Route exact path="/top/:type/:subType?" component={TopAnime} />
+          <Route exact path="/top/:type/:subType?" component={TopMangas} />
           <Route exact path="/season/anime" component={SeasonAnime} />
           <Route exact path='/schedule/:day?' component={ScheduleAnimes} />
           <Route path="/search/:keyword/:rated?" component={SearchResults} />

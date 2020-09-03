@@ -40,7 +40,7 @@ function Home() {
           <CardCategory
             title="Top Manga"
             description="Manga section soon"
-            link="/soon"
+            link="/top/manga"
           />
         </HomeStyled>
       </Wrapper>

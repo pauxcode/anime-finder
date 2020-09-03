@@ -5,6 +5,7 @@ const Context = React.createContext({});
 export function AnimesContextProvider({ children }) {
   const [animeSearched, setAnimeSearched] = useState([]);
   const [topAnimes, setTopAnimes] = useState([]);
+  const [topMangas, setTopMangas] = useState([]);
   const [seasonAnimes, setSeasonAnimes] = useState([]);
   const [scheduleAnimes, setScheduleAnimes] = useState([])
 
@@ -15,6 +16,8 @@ export function AnimesContextProvider({ children }) {
         setAnimeSearched,
         topAnimes,
         setTopAnimes,
+        topMangas,
+        setTopMangas,
         seasonAnimes,
         setSeasonAnimes,
         scheduleAnimes,

@@ -1,12 +1,12 @@
-import { API_URL } from "./settings";
+import { API_URL } from "services/settings";
 // const api_URL = `${API_URL}/top/anime`;
 
-function getTopAnimes({ type }) {
+function getTopMangas({ type, subType }) {
   var apiURL = "";
-  if (type === "All") {
-    apiURL = `${API_URL}/top/anime/1`;
+  if (subType === "All") {
+    apiURL = `${API_URL}/top/${type}/1`;
   } else {
-    apiURL = `${API_URL}/top/anime/1/${type}`;
+    apiURL = `${API_URL}/top/${type}/1/${subType}`;
   }
   const api_URL = apiURL;
 
@@ -14,31 +14,27 @@ function getTopAnimes({ type }) {
     .then((response) => response.json())
     .then((data) => {
       const { top } = data;
-      const animes = top.map(
+      const mangas = top.map(
         ({
           mal_id,
           rank,
           title,
-          image_url,
-          type,
-          episodes,
           members,
           score,
+          image_url,
         }) => {
           return {
             mal_id,
             rank,
             title,
-            image_url,
-            type,
-            episodes,
             members,
             score,
+            image_url,
           };
         }
       );
-      return animes;
+      return mangas;
     });
 }
 
-export default getTopAnimes;
+export default getTopMangas;
