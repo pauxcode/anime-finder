@@ -24,7 +24,7 @@ function Home() {
         <HomeStyled>
           <CardCategory
             title="Top Animes"
-            description="Animes best value for the community (Beta)"
+            description="Animes best rated by the community"
             link="/top/anime"
           />
           <CardCategory
@@ -39,7 +39,7 @@ function Home() {
           />
           <CardCategory
             title="Top Manga"
-            description="Manga section soon"
+            description="Mangas best rated by the community "
             link="/top/manga"
           />
         </HomeStyled>

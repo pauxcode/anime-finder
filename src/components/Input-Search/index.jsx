@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import { InputSearchStyled } from "./styles";
 import useForm from "../../hooks/updateParams";
 
-function InputSearch({ initialKeyword }) {
+function InputSearch({ initialKeyword = "" }) {
   /* initialKeyword will be undefined until a search is done */
   const { keyword, updateKeyword } = useForm({
     initialKeyword,

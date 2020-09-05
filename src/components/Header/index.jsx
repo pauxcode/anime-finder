@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { HeaderStyled } from "./styles";
 import InputSearch from "components/Input-Search";
 
-function Header({ initialKeyword }) {
+function Header() {
   return (
     <HeaderStyled>
       <header className="header">
@@ -12,7 +12,7 @@ function Header({ initialKeyword }) {
             Anime Finder
           </Link>
           <div className="input">
-            <InputSearch initialKeyword={initialKeyword} />
+            <InputSearch initialKeyword="" />
           </div>
         </nav>
       </header>

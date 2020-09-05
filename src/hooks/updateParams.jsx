@@ -51,22 +51,22 @@ export default function useForm({ initialKeyword, initialRated, initialSubType, 
     day,
     updateKeyword: (keyword) =>
       dispatch({
-        subType: ACTIONS.UPDATE_KEYWORD,
+        type: ACTIONS.UPDATE_KEYWORD,
         payload: keyword,
       }),
     updateRated: (rated) =>
       dispatch({
-        subType: ACTIONS.UPDATE_RATED,
+        type: ACTIONS.UPDATE_RATED,
         payload: rated,
       }),
     updateType: (subType) =>
       dispatch({
-        subType: ACTIONS.UPDATE_SUB_TYPE,
+        type: ACTIONS.UPDATE_SUB_TYPE,
         payload: subType,
       }),
     updateDay: (day) =>
       dispatch({
-        subType: ACTIONS.UPDATE_DAY,
+        type: ACTIONS.UPDATE_DAY,
         payload: day,
       }),
   };
