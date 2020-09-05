@@ -3,8 +3,8 @@ import { useHistory } from "react-router-dom";
 
 import useForm from "hooks/updateParams";
 
-const RATEDS = ["g", "pg", "pg13", "r17", "r", "rx"];
-const TYPE = [
+const SEARCH_RATEDS = ["g", "pg", "pg13", "r17", "r", "rx"];
+const ANIME_SUB_TYPE = [
   "bypopularity",
   "favorite",
   "airing",
@@ -14,13 +14,23 @@ const TYPE = [
   "ova",
   "special",
 ];
+const MANGA_SUB_TYPE = [
+  "bypopularity",
+  "favorite",
+  "manga",
+  "novels",
+  "oneshots",
+  "doujin",
+  "manhwa",
+  "manhua",
+];
 
-function SelectCategory({ keyword, rated, seccion, type }) {
+function SelectSubType({ keyword, rated, seccion, type, subType }) {
   const history = useHistory();
 
   const { updateRated, updateType } = useForm({
     initialRated: rated,
-    initialType: type,
+    initialSubType: subType,
   });
 
   if (seccion === "search") {
@@ -35,29 +45,35 @@ function SelectCategory({ keyword, rated, seccion, type }) {
     return (
       <select onChange={handleChangeRated} value={rated}>
         <option>All</option>
-        {RATEDS.map((rated) => (
+        {SEARCH_RATEDS.map((rated) => (
           <option key={rated}>{rated}</option>
         ))}
       </select>
     );
-  } else if (seccion === "top-animes") {
+  } else if (seccion === "top") {
     const handleChangeType = (e) => {
       updateType(e.target.value);
       if (e.target.value === "All") {
-        history.push(`/top/anime`);
+        history.push(`/top/${type}`);
       } else {
-        history.push(`/top/anime/${e.target.value}`);
+        history.push(`/top/${type}/${e.target.value}`);
       }
     };
     return (
-      <select onChange={handleChangeType} value={type}>
+      <select onChange={handleChangeType} value={subType}>
         <option>All</option>
-        {TYPE.map((type) => (
-          <option key={type}>{type}</option>
-        ))}
+        {type === 'anime' ?
+          ANIME_SUB_TYPE.map((subType) => (
+            <option key={subType}>{subType}</option>
+          ))
+          :
+          MANGA_SUB_TYPE.map((subType) => (
+            <option key={subType}>{subType}</option>
+          ))
+        }
       </select>
     );
   }
 }
 
-export default SelectCategory;
+export default SelectSubType;

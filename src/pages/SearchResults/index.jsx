@@ -8,7 +8,7 @@ import ListOfAnimes from "components/List-Of-Animes";
 import useSearchedAnimes from "hooks/useSearchedAnimes";
 import Header from "components/Header";
 
-import SelectCategory from "components/Select-Category";
+import SelectCategory from "components/Select-Sub-Type";
 
 function SearchResults({ match }) {
   const { params } = match;

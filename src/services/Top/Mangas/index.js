@@ -1,5 +1,4 @@
 import { API_URL } from "services/settings";
-// const api_URL = `${API_URL}/top/anime`;
 
 function getTopMangas({ type, subType }) {
   var apiURL = "";
@@ -19,6 +18,8 @@ function getTopMangas({ type, subType }) {
           mal_id,
           rank,
           title,
+          type,
+          volumes,
           members,
           score,
           image_url,
@@ -27,6 +28,8 @@ function getTopMangas({ type, subType }) {
             mal_id,
             rank,
             title,
+            type,
+            volumes,
             members,
             score,
             image_url,

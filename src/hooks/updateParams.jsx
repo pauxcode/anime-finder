@@ -3,7 +3,7 @@ import { useReducer } from "react";
 const ACTIONS = {
   UPDATE_KEYWORD: "update_keyword",
   UPDATE_RATED: "update_rate",
-  UPDATE_TYPE: "update_type",
+  UPDATE_SUB_TYPE: "update_subType",
   UPDATE_DAY: "update_day"
 };
 
@@ -19,7 +19,7 @@ const reducer = (state, action) => {
         ...state,
         rated: action.payload,
       };
-    case ACTIONS.UPDATE_TYPE:
+    case ACTIONS.UPDATE_SUB_TYPE:
       return {
         ...state,
         type: action.payload,
@@ -34,39 +34,39 @@ const reducer = (state, action) => {
   }
 };
 
-export default function useForm({ initialKeyword, initialRated, initialType, initialDay }) {
+export default function useForm({ initialKeyword, initialRated, initialSubType, initialDay }) {
   const [state, dispatch] = useReducer(reducer, {
     keyword: initialKeyword,
     rated: initialRated,
-    type: initialType,
+    subType: initialSubType,
     day: initialDay,
   });
 
-  const { keyword, rated, type, day } = state;
+  const { keyword, rated, subType, day } = state;
 
   return {
     keyword,
     rated,
-    type,
+    subType,
     day,
     updateKeyword: (keyword) =>
       dispatch({
-        type: ACTIONS.UPDATE_KEYWORD,
+        subType: ACTIONS.UPDATE_KEYWORD,
         payload: keyword,
       }),
     updateRated: (rated) =>
       dispatch({
-        type: ACTIONS.UPDATE_RATED,
+        subType: ACTIONS.UPDATE_RATED,
         payload: rated,
       }),
-    updateType: (type) =>
+    updateType: (subType) =>
       dispatch({
-        type: ACTIONS.UPDATE_TYPE,
-        payload: type,
+        subType: ACTIONS.UPDATE_SUB_TYPE,
+        payload: subType,
       }),
     updateDay: (day) =>
       dispatch({
-        type: ACTIONS.UPDATE_DAY,
+        subType: ACTIONS.UPDATE_DAY,
         payload: day,
       }),
   };

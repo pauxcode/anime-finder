@@ -1,5 +1,4 @@
-import { API_URL } from "./settings";
-// const api_URL = `${API_URL}/top/anime`;
+import { API_URL } from "services/settings";
 
 function getTopAnimes({ type, subType }) {
   var apiURL = "";

@@ -1,18 +1,20 @@
-import React from "react";
+import React from 'react'
 import { HeadProvider, Title, Meta } from "react-head";
 
-import useTopAnimes from "hooks/useTop";
+import useTop from 'hooks/useTop'
 
-import Wrapper from "components/Wrapper";
 import { RotateSpinner } from "components/RotateSpinner";
+import Wrapper from "components/Wrapper";
 import Header from "components/Header";
-import SelectCategory from "components/Select-Category";
+import SelectSubType from "components/Select-Sub-Type";
 import ListOfAnimes from "components/List-Of-Animes";
 
-function TopAnimes({ match }) {
+function Top({ match }) {
   const { params } = match;
-  const { type, subType = "All" } = params;
-  const { topAnimes, loading } = useTopAnimes({ type, subType });
+  const { type, subType } = params;
+
+  const { topAnimes, topMangas, loading } = useTop({ type, subType });
+
   if (loading) {
     return (
       <>
@@ -23,19 +25,24 @@ function TopAnimes({ match }) {
       </>
     );
   }
+
   return (
     <Wrapper>
       <HeadProvider>
-        <Title>Top Animes || Anime Finder</Title>
-        <Meta name="description" content="Top Animes" />
+        <Title>Top {type} || Anime Finder</Title>
+        <Meta name="description" content={`Top ${type}`} />
       </HeadProvider>
       <div className="header">
         <Header />
       </div>
-      <SelectCategory type={subType} seccion="top-animes" />
-      <ListOfAnimes animes={topAnimes} seccion="top-animes" />
+      <SelectSubType type={type} subType={subType} seccion="top" />
+      {type === 'anime' ?
+        <ListOfAnimes animes={topAnimes} seccion="top-animes" />
+        :
+        <ListOfAnimes mangas={topMangas} seccion="top-mangas" />
+      }
     </Wrapper>
-  );
+  )
 }
 
-export default TopAnimes;
+export default Top

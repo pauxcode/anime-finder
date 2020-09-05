@@ -2,12 +2,13 @@ import React from "react";
 
 import { ListOfAnimesStyled } from "./styles";
 
-import TopAnime from "components/AnimeCard/Top-Anime";
-import SeasonAnime from "components/AnimeCard/Season-Anime";
-import ScheduleAnime from 'components/AnimeCard/Schedule-Anime'
-import SearchedAnime from "components/AnimeCard/Searched-Anime";
+import TopAnime from "components/Cards/Top-Anime";
+import TopManga from "components/Cards/Top-Manga"
+import SeasonAnime from "components/Cards/Season-Anime";
+import ScheduleAnime from 'components/Cards/Schedule-Anime'
+import SearchedAnime from "components/Cards/Searched-Anime";
 
-function ListOfAnimes({ animes, seccion }) {
+function ListOfAnimes({ animes, mangas, seccion }) {
   if (seccion === "top-animes") {
     return (
       <ListOfAnimesStyled>
@@ -34,6 +35,38 @@ function ListOfAnimes({ animes, seccion }) {
                 episodes={episodes}
                 members={members}
                 score={score}
+              />
+            );
+          }
+        )}
+      </ListOfAnimesStyled>
+    );
+  } else if (seccion === "top-mangas") {
+    return (
+      <ListOfAnimesStyled>
+        {mangas.map(
+          ({
+            mal_id,
+            rank,
+            title,
+            type,
+            volumes,
+            members,
+            score,
+            image_url,
+          }) => {
+            //Extraemos los datos que nos llegan :b
+            return (
+              <TopManga
+                key={mal_id}
+                id={mal_id}
+                rank={rank}
+                title={title}
+                type={type}
+                volumes={volumes}
+                members={members}
+                score={score}
+                image={image_url}
               />
             );
           }
