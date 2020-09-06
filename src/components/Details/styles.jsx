@@ -2,11 +2,11 @@ import styled from "styled-components";
 
 export const AnimeDetailsStyled = styled.div`
   background: var(--background);
-  padding: 0 20px;
-  .iframe {
-    width: 100%;
-    height: 185px;
+  .image_cover {
+    display: flex;
+    justify-content: center;
   }
+  padding: 0 20px;
   .star {
     width: 20px;
   }
