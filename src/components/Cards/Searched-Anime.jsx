@@ -16,7 +16,7 @@ function SearchedAnime({
   const history = useHistory();
 
   function handleClick() {
-    history.push(`/anime/${id}`);
+    history.push(`/details/anime/${id}`);
   }
   return (
     <AnimeCardStyled onClick={handleClick}>
@@ -31,8 +31,8 @@ function SearchedAnime({
           ) : type === "Movie" ? (
             <i className="fas fa-film"></i>
           ) : (
-            type
-          )}{" "}
+                type
+              )}{" "}
           ({episodes})
         </p>
         <p>

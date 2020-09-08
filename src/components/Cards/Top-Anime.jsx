@@ -7,7 +7,7 @@ function TopAnime({ id, rank, title, image, type, episodes, members, score }) {
   const history = useHistory();
 
   function handleClick() {
-    history.push(`/anime/${id}`);
+    history.push(`/details/anime/${id}`);
   }
   return (
     <AnimeCardStyled onClick={handleClick}>
@@ -23,8 +23,8 @@ function TopAnime({ id, rank, title, image, type, episodes, members, score }) {
           ) : type === "Movie" ? (
             <i className="fas fa-film"></i>
           ) : (
-            type
-          )}{" "}
+                type
+              )}{" "}
           ({episodes})
         </p>
         <p>

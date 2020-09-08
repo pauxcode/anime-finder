@@ -17,7 +17,7 @@ function SeasonAnime({
   const history = useHistory();
 
   function handleClick() {
-    history.push(`/anime/${id}`);
+    history.push(`/details/anime/${id}`);
   }
   return (
     <AnimeCardStyled onClick={handleClick}>
@@ -35,27 +35,27 @@ function SeasonAnime({
           ) : type === "Movie" ? (
             <i className="fas fa-film"></i>
           ) : (
-            type
-          )}{" "}
+                type
+              )}{" "}
           {episodes === null ? "" : `(${episodes})`}
         </p>
         <p>
           {score === null ? (
             ""
           ) : (
-            <>
-              <i className="fas fa-star"></i>
-              {score}
-            </>
-          )}
+              <>
+                <i className="fas fa-star"></i>
+                {score}
+              </>
+            )}
           {"  "}
           {members === 0 ? (
             ""
           ) : (
-            <>
-              <i className="fas fa-child"></i> {members}
-            </>
-          )}
+              <>
+                <i className="fas fa-child"></i> {members}
+              </>
+            )}
         </p>
         <p>{r18 ? "+18" : ""}</p>
       </div>

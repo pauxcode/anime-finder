@@ -7,7 +7,7 @@ function TopManga({ id, rank, title, type, volumes, members, score, image }) {
   const history = useHistory();
 
   function handleClick() {
-    history.push(`/manga/${id}`);
+    history.push(`/details/manga/${id}`);
   }
   return (
     <AnimeCardStyled onClick={handleClick}>

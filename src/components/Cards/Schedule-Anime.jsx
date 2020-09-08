@@ -17,7 +17,7 @@ function SeasonAnime({
   const history = useHistory();
 
   function handleClick() {
-    history.push(`/anime/${id}`);
+    history.push(`/details/anime/${id}`);
   }
   return (
     <AnimeCardStyled onClick={handleClick}>
