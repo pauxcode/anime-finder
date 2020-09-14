@@ -4,7 +4,7 @@ import { FooterStyled } from "./styles";
 function Footer() {
   return (
     <FooterStyled>
-      <p>Made by @DazaiLux</p>
+      <p>Made by @DazaiLux with love <span role="img" aria-label="heart emoji" >❤️</span></p>
     </FooterStyled>
   );
 }
