@@ -17,7 +17,7 @@ function CardCategory({ title, description, link }) {
           alt="anime category"
           lazy="loading"
           width="248px"
-          height="160px"
+          height="250px"
         />
       </div>
       <div className="details">
