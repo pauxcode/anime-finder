@@ -2,7 +2,7 @@ import React from "react";
 import { CardCategoryStyled } from "./styles";
 import { useHistory } from "react-router-dom";
 
-import imgseccion from "images/seccion.jpg";
+import imgSeccion from "images/seccion.jpg";
 
 function CardCategory({ title, description, link }) {
   const history = useHistory();
@@ -11,19 +11,17 @@ function CardCategory({ title, description, link }) {
   }
   return (
     <CardCategoryStyled onClick={handleClick}>
-      <div className="image">
+      <figure className="image">
         <img
-          src={imgseccion}
+          src={imgSeccion}
           alt="anime category"
           lazy="loading"
-          width="248px"
-          height="250px"
         />
-      </div>
-      <div className="details">
+      </figure>
+      <header className="details">
         <h2>{title}</h2>
         <p>{description}</p>
-      </div>
+      </header>
     </CardCategoryStyled>
   );
 }

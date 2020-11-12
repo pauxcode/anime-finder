@@ -6,9 +6,9 @@ const WrapperStyled = styled.div`
   margin: auto;
   padding: 0 1rem;
 
-  @media (max-width: 425px) {
-    padding: 0;
-  }
+  // @media (max-width: 425px) {
+  //   padding: 0;
+  // }
 `;
 
 function Wrapper({ children }) {

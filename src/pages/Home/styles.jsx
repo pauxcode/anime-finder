@@ -2,10 +2,25 @@ import styled from "styled-components";
 
 export const HomeStyled = styled.div`
   display: grid;
-  grid-template-columns: 40% 40%;
-  grid-template-rows: 1fr 1fr;
-  justify-content: space-around;
-  row-gap: 20px;
+  justify-content: center;
+  grid-template-columns: repeat(2, minmax(140px, 500px));
+  grid-template-rows: 200px 230px;
+  gap: 10px;
+
+  // media queries
+  @media screen and (min-width: 425px) {
+    grid-template-rows: 250px 280px;
+  }
+  @media screen and (min-width: 560px) {
+    grid-template-rows: 320px 320px;
+  }
+  @media screen and (min-width: 780px) {
+    grid-template-rows: 400px 400px;
+  }
+  @media screen and (min-width: 975px) {
+    grid-template-rows: 450px 450px;
+    gap: 20px;
+  }
 `;
 
 export const PromptStyled = styled.div`

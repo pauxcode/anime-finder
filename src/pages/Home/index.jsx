@@ -10,15 +10,13 @@ import Footer from "components/Footer";
 function Home() {
   return (
     <>
+      <Header />
       <Wrapper>
-        <div className="header">
-          <Header />
-        </div>
         <HeadProvider>
           <Title>Home || Anime Finder</Title>
           <Meta
-            content="Anime Finder is the site where you can find information about your favorite anime and more"
             name="description"
+            content="Anime Finder is the site where you can find information about your favorite anime and more"
           />
         </HeadProvider>
         <HomeStyled>
@@ -28,19 +26,19 @@ function Home() {
             link="/top/anime"
           />
           <CardCategory
+            title="Top Mangas"
+            description="Mangas best rated by the community "
+            link="/top/manga"
+          />
+          <CardCategory
             title="Season Animes"
-            description="Animes this season (Beta)"
+            description="Animes this season"
             link="/season/anime"
           />
           <CardCategory
             title="Schedule Animes"
             description="Anime schedule of the week or specified day"
             link="/schedule"
-          />
-          <CardCategory
-            title="Top Manga"
-            description="Mangas best rated by the community "
-            link="/top/manga"
           />
         </HomeStyled>
       </Wrapper>

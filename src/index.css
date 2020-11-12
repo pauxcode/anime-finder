@@ -3,10 +3,11 @@
   --white: white;
   --background: #fafafa;
 }
-.header {
+div.sc-hKFyIo {
   position: sticky;
   top: 0;
 }
+
 *,
 ::after,
 ::before {
