@@ -18,7 +18,7 @@ export const InputSearchStyled = styled.div`
       font-size: 18px;
     }
   }
-  @media screen and (min-width: 975px) {
+  @media screen and (min-width: 1024px) {
     input {
       font-size: 22px;
     }

@@ -41,7 +41,7 @@ export const HeaderStyled = styled.div`
       width: 36%;
     }
   }
-  @media screen and (min-width: 975px) {
+  @media screen and (min-width: 1024px) {
     .header nav {
       height: 60px;
     }

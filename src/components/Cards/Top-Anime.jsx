@@ -12,10 +12,8 @@ function TopAnime({ id, rank, title, image, type, episodes, members, score }) {
   return (
     <AnimeCardStyled onClick={handleClick}>
       <img loading="lazy" alt={title} src={image} width="128" height="209" />
-      <div className="information">
-        <div className="title">
-          <h2>{title}</h2>
-        </div>
+      <header className="information">
+        <h2>{title}</h2>
         <p>Rank: {rank}</p>
         <p>
           {type === "TV" ? (
@@ -32,7 +30,7 @@ function TopAnime({ id, rank, title, image, type, episodes, members, score }) {
           {"  "}
           <i className="fas fa-child"></i> {members}
         </p>
-      </div>
+      </header>
     </AnimeCardStyled>
   );
 }
