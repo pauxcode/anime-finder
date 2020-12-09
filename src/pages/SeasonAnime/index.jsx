@@ -21,17 +21,16 @@ function SeasonAnime() {
     );
   }
   return (
-    <Wrapper>
+    <>
       <HeadProvider>
         <Title>Season Animes || Anime Finder</Title>
         <Meta name="description" content="Season Animes" />
       </HeadProvider>
-      <div className="header">
-        <Header />
-      </div>
-
-      <ListOfAnimes animes={seasonAnimes} seccion="season-animes" />
-    </Wrapper>
+      <Header />
+      <Wrapper>
+        <ListOfAnimes animes={seasonAnimes} seccion="season-animes" />
+      </Wrapper>
+    </>
   );
 }
 

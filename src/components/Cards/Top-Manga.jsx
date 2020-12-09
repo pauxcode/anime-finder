@@ -12,25 +12,35 @@ function TopManga({ id, rank, title, type, volumes, members, score, image }) {
   return (
     <AnimeCardStyled onClick={handleClick}>
       <img loading="lazy" alt={title} src={image} width="128" height="209" />
-      <div className="information">
-        <div className="title">
-          <h2>{title}</h2>
-        </div>
+      <header className="information">
+        <h2>{title}</h2>
         <p>Rank: {rank}</p>
         <p>
           {type}{" "}
-          {volumes === null ?
-            " "
-            :
-            `(${volumes})`
-          }
+          {volumes === null ? `(?)` : `(${volumes})`}
         </p>
         <p>
-          <i className="fas fa-star"></i> {score}
+          {score === null ?
+            <>
+              <i className="fas fa-star"></i> ?
+            </>
+            :
+            <>
+              <i className="fas fa-star"></i> {score}
+            </>
+          }
           {"  "}
-          <i className="fas fa-child"></i> {members}
+          {members === 0 ?
+            <>
+              <i className="fas fa-child"></i> ?
+            </>
+            :
+            <>
+              <i className="fas fa-child"></i> {members}
+            </>
+          }
         </p>
-      </div>
+      </header>
     </AnimeCardStyled>
   );
 }

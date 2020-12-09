@@ -8,6 +8,8 @@ import ListOfAnimes from "components/List-Of-Animes";
 import useSearchedAnimes from "hooks/useSearchedAnimes";
 import Header from "components/Header";
 
+import { PagesStyled } from '../styles'
+
 import SelectCategory from "components/Select-Sub-Type";
 
 function SearchResults({ match }) {
@@ -20,18 +22,24 @@ function SearchResults({ match }) {
   }
 
   return (
-    <Wrapper>
+    <>
       <HeadProvider>
         <Title>{keyword} || Anime Finder</Title>
         <Meta name="description" content={`search of ${keyword}`} />
       </HeadProvider>
-      <div className="header">
-        <Header initialKeyword={keyword} />
-      </div>
-      <SelectCategory keyword={keyword} rated={rated} seccion="search" />
-      <h2>{keyword}</h2>
-      <ListOfAnimes animes={animeSearched} seccion="search" />
-    </Wrapper>
+      <Header initialKeyword={keyword} />
+      <Wrapper>
+        <PagesStyled>
+          <nav>
+            <SelectCategory keyword={keyword} rated={rated} seccion='search' />
+          </nav>
+          <header className="keyword">
+            <h2>{keyword}</h2>
+          </header>
+        </PagesStyled>
+        <ListOfAnimes animes={animeSearched} seccion="search" />
+      </Wrapper>
+    </>
   );
 }
 

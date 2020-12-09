@@ -37,7 +37,7 @@ function Top({ match }) {
         {type === 'anime' ?
           <ListOfAnimes animes={topAnimes} type={type} subType={subType} seccion="top-animes" />
           :
-          <ListOfAnimes mangas={topMangas} seccion="top-mangas" />
+          <ListOfAnimes mangas={topMangas} type={type} subType={subType} seccion="top-mangas" />
         }
       </Wrapper>
     </>

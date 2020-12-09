@@ -16,19 +16,32 @@ function TopAnime({ id, rank, title, image, type, episodes, members, score }) {
         <h2>{title}</h2>
         <p>Rank: {rank}</p>
         <p>
-          {type === "TV" ? (
-            <i className="fas fa-tv"></i>
-          ) : type === "Movie" ? (
-            <i className="fas fa-film"></i>
-          ) : (
-                type
-              )}{" "}
-          ({episodes})
+          {type === "TV" ? <i className="fas fa-tv"></i>
+            : type === "Movie" ? <i className="fas fa-film"></i>
+              : type
+          }
+          {episodes === null ? ` (?)` : ` (${episodes})`}
         </p>
         <p>
-          <i className="fas fa-star"></i> {score}
+          {score === null ?
+            <>
+              <i className="fas fa-star"></i> ?
+            </>
+            :
+            <>
+              <i className="fas fa-star"></i> {score}
+            </>
+          }
           {"  "}
-          <i className="fas fa-child"></i> {members}
+          {members === 0 ?
+            <>
+              <i className="fas fa-child"></i> ?
+            </>
+            :
+            <>
+              <i className="fas fa-child"></i> {members}
+            </>
+          }
         </p>
       </header>
     </AnimeCardStyled>

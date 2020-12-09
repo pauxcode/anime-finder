@@ -21,44 +21,42 @@ function SeasonAnime({
   }
   return (
     <AnimeCardStyled onClick={handleClick}>
-      <img loading="lazy" alt={title} src={image} height="209" width="128" />
-      <div className="information">
-        <div className="title">
-          <h2>{title}</h2>
-        </div>
+      <img loading="lazy" alt={title} src={image} width="128" height="209" />
+      <header className="information">
+        <h2>{title}</h2>
         <p>
-          {airing_start ? airing_start.replace(/[-:+]/g, " ").slice(0, 10) : ""}
+          {airing_start ? airing_start.replace(/[-:+]/g, "-").slice(0, 10) : ""}
         </p>
         <p>
-          {type === "TV" ? (
-            <i className="fas fa-tv"></i>
-          ) : type === "Movie" ? (
-            <i className="fas fa-film"></i>
-          ) : (
-                type
-              )}{" "}
-          {episodes === null ? "" : `(${episodes})`}
+          {type === "TV" ? <i className="fas fa-tv"></i>
+            : type === "Movie" ? <i className="fas fa-film"></i>
+              : type
+          }
+          {episodes === null ? ` (?)` : ` (${episodes})`}
         </p>
         <p>
-          {score === null ? (
-            ""
-          ) : (
-              <>
-                <i className="fas fa-star"></i>
-                {score}
-              </>
-            )}
+          {score === null ?
+            <>
+              <i className="fas fa-star"></i> ?
+            </>
+            :
+            <>
+              <i className="fas fa-star"></i> {score}
+            </>
+          }
           {"  "}
-          {members === 0 ? (
-            ""
-          ) : (
-              <>
-                <i className="fas fa-child"></i> {members}
-              </>
-            )}
+          {members === 0 ?
+            <>
+              <i className="fas fa-child"></i> ?
+            </>
+            :
+            <>
+              <i className="fas fa-child"></i> {members}
+            </>
+          }
         </p>
         <p>{r18 ? "+18" : ""}</p>
-      </div>
+      </header>
     </AnimeCardStyled>
   );
 }

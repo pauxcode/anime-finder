@@ -21,27 +21,38 @@ function SearchedAnime({
   return (
     <AnimeCardStyled onClick={handleClick}>
       <img loading="lazy" alt={title} src={image} height="209" width="128" />
-      <div className="information">
-        <div className="title">
-          <h2>{title}</h2>
-        </div>
+      <header className="information">
+        <h2>{title}</h2>
         <p>
-          {type === "TV" ? (
-            <i className="fas fa-tv"></i>
-          ) : type === "Movie" ? (
-            <i className="fas fa-film"></i>
-          ) : (
-                type
-              )}{" "}
-          ({episodes})
+          {type === "TV" ? <i className="fas fa-tv"></i>
+            : type === "Movie" ? <i className="fas fa-film"></i>
+              : type
+          }
+          {episodes === null ? ` (?)` : ` (${episodes})`}
         </p>
         <p>
-          <i className="fas fa-star"></i> {score}
+          {score === null ?
+            <>
+              <i className="fas fa-star"></i> ?
+            </>
+            :
+            <>
+              <i className="fas fa-star"></i> {score}
+            </>
+          }
           {"  "}
-          <i className="fas fa-child"></i> {members}
+          {members === 0 ?
+            <>
+              <i className="fas fa-child"></i> ?
+            </>
+            :
+            <>
+              <i className="fas fa-child"></i> {members}
+            </>
+          }
         </p>
         <p>Rated: {rated}</p>
-      </div>
+      </header>
     </AnimeCardStyled>
   );
 }

@@ -5,21 +5,21 @@ import getScheduleAnimes from 'services/getScheduleAnimes'
 import AnimesContext from 'context/AnimesContext'
 
 function useScheduleAnimes({ day = "All" }) {
-    const { scheduleAnimes, setScheduleAnimes } = useContext(AnimesContext)
-    // const [scheduleAnimes, setScheduleAnimes] = useState([])
-    const [loading, setLoading] = useState(false)
+  const { scheduleAnimes, setScheduleAnimes } = useContext(AnimesContext)
+  // const [scheduleAnimes, setScheduleAnimes] = useState([])
+  const [loading, setLoading] = useState(false)
 
-    useEffect(() => {
-        setLoading(true);
+  useEffect(() => {
+    setLoading(true);
 
-        getScheduleAnimes({ day })
-            .then((scheduleAnimes) => {
-                setScheduleAnimes(scheduleAnimes);
-                setLoading(false);
-            });
-    }, [setScheduleAnimes, day]);
+    getScheduleAnimes({ day })
+      .then((scheduleAnimes) => {
+        setScheduleAnimes(scheduleAnimes);
+        setLoading(false);
+      });
+  }, [setScheduleAnimes, day]);
 
-    return { loading, scheduleAnimes }
+  return { loading, scheduleAnimes }
 }
 
 export default useScheduleAnimes

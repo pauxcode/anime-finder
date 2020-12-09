@@ -31,26 +31,6 @@ function getSeasonAnimes() {
           r18,
         };
       });
-      // .sort(function (prev, next) {
-      //   if (prev.title > next.title) {
-      //     return 1;
-      //   }
-      //   if (prev.title < next.title) {
-      //     return -1;
-      //   }
-      //   return 0;
-      // });
-      // console.log(
-      //   seasonAnimes.sort(function (prev, next) {
-      //     if (prev.title > next.title) {
-      //       return 1;
-      //     }
-      //     if (prev.title < next.title) {
-      //       return -1;
-      //     }
-      //     return 0;
-      //   })
-      // );
       return seasonAnimes;
     });
 }

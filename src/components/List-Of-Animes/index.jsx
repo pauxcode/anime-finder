@@ -36,6 +36,8 @@ function ListOfAnimes({ animes, mangas, seccion, type, subType }) {
   } else if (seccion === "top-mangas") {
     return (
       <ListOfAnimesStyled>
+        <SelectSubType type={type} subType={subType} seccion="top" />
+        <span></span>
         {mangas.map((manga) => {
           return (
             <TopManga
