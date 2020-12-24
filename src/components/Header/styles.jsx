@@ -1,49 +1,43 @@
 import styled from "styled-components";
 
-export const HeaderStyled = styled.div`
-  .header {
-    box-shadow: 0 2px rgba(0, 0, 0, 0.15);
-  }
-  .header nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    height: 45px;
-    background: var(--white);
-    margin-bottom: 10px;
-  }
-  nav a {
-    color: royalblue;
-    text-decoration: none;
-    font-size: 20px;
+export const HeaderStyled = styled.header`
+  box-sizing: initial;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  background: var(--white);
+  margin-bottom: 10px;
+  padding: 10px 0;
+
+  h1 {
+    font-size: 22px;
     font-weight: bold;
   }
-  nav a:hover {
+  h1 a {
+    color: royalblue;
+    text-decoration: none;
+  }
+  h1 a:hover {
     text-decoration: underline;
   }
-  .input {
+
+  nav {
     width: 50%;
   }
-
+  nav input {
+    width: 100%;
+  }
+  
+  box-shadow: 0 2px rgba(0, 0, 0, 0.15);
 
   // Media queries
-  @media screen and (min-width: 560px) {
-    nav a {
-      font-size: 22px;
-    }
-  }
-  @media screen and (min-width: 780px) {
-    nav a {
+  @media screen and (min-width: 768px) {
+    h1 {
       font-size: 25px;
     }
-    .input {
+    nav {
       width: 36%;
-    }
-  }
-  @media screen and (min-width: 1024px) {
-    .header nav {
-      height: 60px;
     }
   }
 `;

@@ -1,127 +1,143 @@
 import styled from "styled-components";
 
-export const AnimeDetailsStyled = styled.div`
-  background: var(--background);
-  .image_cover {
-    display: flex;
-    justify-content: center;
+export const DetailsStyled = styled.main`
+  background: var(--white);
+  display: grid;
+  grid-template-areas:
+        "cover"
+        "title"
+        "status"
+        "synopsis"
+        "background"
+        "title-genres"
+        "genres"
+        "title-openings"
+        "openings"
+        "title-endings"
+        "endings";
+
+  div.status, details.synopsis, details.background, h3.title-genres, h3.title-openings, h3.title-endings {
+    margin-top: 10px;
   }
-  padding: 0 20px;
-  .star {
-    width: 20px;
-  }
-  .synopsis {
-    background: var(--white);
-  }
-  .genres {
-    justify-content: space-around;
-    display: flex;
-    span {
-      padding: 5px;
-      font-size: 15px;
-      width: 95px;
-      text-align: center;
-      background: var(--white);
-      border: 0.5px solid var(--black);
-      border-radius: 5px;
-      box-shadow: 0 0 7px 2px rgba(0, 0, 0, 0.03);
-    }
-    span:hover {
-      cursor: pointer;
-      border: 1px solid darkred;
-    }
+  div.genres, ul {
+    margin-top: 5px;
   }
 
-  @media (min-width: 700px) {
-    .genres > span {
-      width: 170px;
-    }
+  h1 {
+    grid-area: title;
   }
-  @media (min-width: 700px) {
-    .iframe {
-      height: 370px;
-    }
-  }
-`;
 
-export const MangaDetailsStyled = styled.div`
-  background: var(--background);
-  padding: 0 20px;
-  main { background: var(--white); }
-  .image_cover {
-    display: flex;
-    justify-content: center;
+  div.status {
+    grid-area: status;
   }
-  .status {
-    display: flex;
-    flex-wrap: wrap;
-    text-align: center;
+
+  details.synopsis {
+    grid-area: synopsis;
   }
-  .status > p {
-    width: 50%;
+  details.background {
+    grid-area: background;
   }
-  .status > p:nth-child(5) {
-      width: 100%;
-    }
-  .synopsis {
-    background: var(--white);
+
+  h3.title-genres {
+    grid-area: title-genres;
   }
-  .genres {
-    display: flex;
-    flex-wrap: wrap;
+  div.genres {
+    grid-area: genres;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 92px);
+    gap: 5px;
   }
-  .genres > span {
+  div.genres span {
     padding: 5px;
     font-size: 15px;
-    width: 48%;
-    margin: 0 10px 10px 0;
+    width: 100%;
     text-align: center;
+    background: var(--white);
     border: 0.5px solid var(--black);
     border-radius: 5px;
     box-shadow: 0 0 7px 2px rgba(0, 0, 0, 0.03);
   }
-  .genres > span:hover {
-    cursor: pointer;
-    border: 1px solid darkred;
+
+  ul {
+    padding-left: 20px;
   }
-  .genres > span:nth-child(2n) {
-    margin: 0 0 10px 0;
+  ul li {
+    margin-bottom: 5px;
   }
 
-  @media (min-width: 425px) {
-    .genres > span {
-      width: 30%;
-    }
-    .genres > span:nth-child(2n) {
-      margin: 0 10px 10px 0;
-    }
-    .genres > span:nth-child(3n) {
-      margin: 0 0 10px 0;
+  h3.title-openings {
+    grid-area: title-openings;
+  }
+  ul.openings {
+    grid-area: openings;
+  }
+
+  h3.title-endings {
+    grid-area: title-endings;
+  }
+  ul.endings {
+    grid-area: endings;
+  }
+
+  div.cover.trailer-video {
+    grid-area: cover;
+    height: 200px;
+  }
+  h3.title-trailer, div.cover.image {
+    display: none;
+  }
+
+  div.cover.image-manga {
+    grid-area: cover;
+    display: initial;
+    display: flex;
+    justify-content: center;
+  }
+  
+  iframe {
+    width: 100%;
+    height: 100%;
+  }
+
+
+  // Media Queries
+  @media (min-width: 375px) {
+    div.genres {
+      grid-template-columns: repeat(auto-fill, 100px);
     }
   }
-  @media (min-width: 700px) {
-    .genres > span {
-      width: 23%;
+  @media (min-width: 768px) {
+    grid-template-areas:
+        "cover"
+        "title"
+        "status"
+        "synopsis"
+        "background"
+        "title-genres"
+        "genres"
+        "title-openings"
+        "openings"
+        "title-endings"
+        "endings"
+        "title-trailer"
+        "video";
+
+    div.cover.image {
+      display: flex;
+      justify-content: center;
     }
-    .status > p {
-      width: 25%;
+    div.status {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
     }
-    .genres > span:nth-child(3n) {
-      margin: 0 10px 10px 0;
+    h3.title-trailer {
+      grid-area: title-trailer;
+      display: initial;
     }
-    .genres > span:nth-child(4n) {
-      margin: 0 0 10px 0;
-    }
-  }
-  @media (min-width: 1024px) {
-    .genres > span {
-      width: 19%;
-    }
-    .genres > span:nth-child(4n) {
-      margin: 0 10px 10px 0;
-    }
-    .genres > span:nth-child(5n) {
-      margin: 0 0 10px 0;
+    div.cover.trailer-video {
+      width: 50%;
+      height: 350px;
+      grid-area: video;
     }
   }
 `;

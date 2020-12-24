@@ -1,21 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { HeaderStyled } from "./styles";
-import InputSearch from "components/Input-Search";
 
-function Header() {
+import { HeaderStyled } from "./styles";
+
+import InputSearch from "components/InputSearch";
+
+function Header({ initialKeyword }) {
   return (
-    <HeaderStyled>
-      <header className="header">
-        <nav>
-          <Link to="/" className="link-home">
-            Anime Finder
-          </Link>
-          <div className="input">
-            <InputSearch initialKeyword="" />
-          </div>
-        </nav>
-      </header>
+    <HeaderStyled className="header-main">
+      <h1>
+        <Link to="/" className="link-home">
+          Anime Finder
+        </Link>
+      </h1>
+      <nav>
+        <InputSearch initialKeyword={initialKeyword} />
+      </nav>
     </HeaderStyled>
   );
 }
